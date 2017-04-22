@@ -44,6 +44,7 @@ public class TextBoxManager : MonoBehaviour {
         }
         if (allTextInFile != null)
         {
+            currentLine = 0;
             textLines = allTextInFile.Split('\n');
             endAtLine = textLines.Length;
         }

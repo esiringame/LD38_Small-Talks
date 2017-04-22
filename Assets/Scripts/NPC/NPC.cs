@@ -10,7 +10,7 @@ public class NPC : MonoBehaviour {
     public float Acceleration = .1f;
     private float _walkingSpeed;
 
-    public GameObject Player;
+    private GameObject _player;
 
     public float TriggerDistance = 3.0f;
     public float CatchDistance = .2f;
@@ -31,8 +31,9 @@ public class NPC : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        _player = GameObject.FindWithTag("Player");
 	    _transform = GetComponent<Transform>();
-        _playerTransform = Player.GetComponent<Transform>();
+        _playerTransform = _player.GetComponent<Transform>();
         _stateNPC = State.walking;
         _walkingSpeed = WalkingSpeed;
 	}
@@ -60,7 +61,7 @@ public class NPC : MonoBehaviour {
         {
             _stateNPC = State.idle;
         }
-        else if ((_stateNPC == State.idle && !Player.GetComponent<Player>().isTalking) || (_stateNPC == State.triggered && Player.GetComponent<Player>().isTalking))
+        else if ((_stateNPC == State.idle && !_player.GetComponent<Player>().isTalking) || (_stateNPC == State.triggered && _player.GetComponent<Player>().isTalking))
         {
             _stateNPC = State.flee;
         }
@@ -87,7 +88,7 @@ public class NPC : MonoBehaviour {
 
     void caught()
     {
-        Player.GetComponent<Player>().triggered(_indexNPC);
+        _player.GetComponent<Player>().triggered(_indexNPC);
     }
 
 

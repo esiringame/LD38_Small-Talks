@@ -8,7 +8,7 @@ public class TextBoxManager : MonoBehaviour {
 
     public Text theText;
     public TextAsset textFile;
-    public Player player;
+    public PlayerBehaviour player;
     private string[] textLines;
     public int currentLine;
     public int endAtLine;
@@ -41,7 +41,7 @@ public class TextBoxManager : MonoBehaviour {
             {
                 gameObject.SetActive(false);
                 isActive = false;
-                player.onRelease();
+                player.OnRelease();
             }
         }
     }

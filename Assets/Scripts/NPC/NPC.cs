@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour {
 
+    public bool DoesHeKnowUPR = true;
     public Vector3 Direction = Vector3.left;
     public float WalkingSpeed = 0.8f;
     public float MaxSpeed = 99.99f;
@@ -20,7 +21,7 @@ public class NPC : MonoBehaviour {
     private int _indexNPC = 1;
     private State _stateNPC;
 
-    private enum State
+    public enum State
     {
         walking, // ignore player
         triggered, // walking to player
@@ -49,7 +50,7 @@ public class NPC : MonoBehaviour {
         {
             _stateNPC = State.walking;
         }
-        else if (playerDistance < TriggerDistance && _stateNPC == State.walking)
+        else if (playerDistance < TriggerDistance && _stateNPC == State.walking && DoesHeKnowUPR)
         {
             _stateNPC = State.triggered;
         }
@@ -61,7 +62,7 @@ public class NPC : MonoBehaviour {
         {
             _stateNPC = State.idle;
         }
-        else if ((_stateNPC == State.idle && _player.GetComponent<Player>().getState() != global::Player.State.Talking) || (_stateNPC == State.triggered && _player.GetComponent<Player>().getState() == global::Player.State.Talking))
+        else if ((_stateNPC == State.idle && _player.GetComponent<PlayerBehaviour>().GetState() != global::PlayerBehaviour.State.Talking) || (_stateNPC == State.triggered && _player.GetComponent<PlayerBehaviour>().GetState() == global::PlayerBehaviour.State.Talking))
         {
             _stateNPC = State.flee;
         }
@@ -88,7 +89,7 @@ public class NPC : MonoBehaviour {
 
     void caught()
     {
-        _player.GetComponent<Player>().triggered(_indexNPC);
+        _player.GetComponent<PlayerBehaviour>().OnTrigger(_indexNPC);
     }
 
 

@@ -20,10 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4644249823353792}
   - component: {fileID: 212149849955364740}
-  - component: {fileID: 114232177809404712}
   - component: {fileID: 95409912637577834}
   - component: {fileID: 114745611851995938}
   - component: {fileID: 82882902404771438}
+  - component: {fileID: 114670798712177718}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -141,7 +141,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114232177809404712
+--- !u!114 &114670798712177718
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -149,15 +149,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1744746265059892}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4b02ba637298184a9bb79052bbf3294, type: 3}
+  m_Script: {fileID: 11500000, guid: f2d886ef29b054f549034c8d014a5b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TextBoxManager: {fileID: 0}
   horSpeed: 1
   verSpeed: 1
   nearNPC: 0
   nearHideout: 0
   dialogOn: 0
-  dialog: {fileID: 0}
   hideout: {fileID: 0}
   state: 0
 --- !u!114 &114745611851995938

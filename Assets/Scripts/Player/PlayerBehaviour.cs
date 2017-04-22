@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class PlayerBehaviour : MonoBehaviour {
     
     public GameObject TextBoxManager;
 
@@ -17,6 +17,7 @@ public class Player : MonoBehaviour {
     HideoutBehaviour hideout;
     [SerializeField]
     private State state;
+
     public enum State
     {
         Idle,
@@ -25,7 +26,7 @@ public class Player : MonoBehaviour {
         Talking
     }
 
-    public State getState()
+    public State GetState()
     {
         return state;
     }
@@ -81,12 +82,12 @@ public class Player : MonoBehaviour {
         Movement();
     }
 
-    public void onRelease()
+    public void OnRelease()
     {
         state = State.Idle;
     }
 
-    public void triggered(int indexEnemy)
+    public void OnTrigger(int indexEnemy)
     {
         TextBoxManager.GetComponent<TextBoxManager>().talkTriggered(indexEnemy);
         state = State.Talking;
@@ -105,7 +106,7 @@ public class Player : MonoBehaviour {
                 else if (nearNPC)
                 {
                     dialogOn = true;
-                    triggered(1);
+                    OnTrigger(1);
                 }
             }
             else if (state == State.Hidding)
@@ -114,7 +115,7 @@ public class Player : MonoBehaviour {
             }
             else
             {
-                triggered(1);
+                OnTrigger(1);
             }
         }
     }

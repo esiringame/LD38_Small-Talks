@@ -28,7 +28,7 @@ public class ProceduralEngine : MonoBehaviour
             if (factory != null)
             {
                 GameObject spawned = factory.Instantiate();
-                spawned.transform.parent = gameObject.transform;
+                spawned.transform.parent = factory.Root != null ? factory.Root.transform : gameObject.transform;
 
                 RectTransform spawnZone = factory.SpawnZone;
                 Rect rect = spawnZone.rect;

@@ -20,7 +20,7 @@ public class NPC : MonoBehaviour {
     private int _indexNPC = 1;
     private State _stateNPC;
 
-    private enum State
+    public enum State
     {
         walking, // ignore player
         triggered, // walking to player

@@ -58,10 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theText: {fileID: 114505771528271754}
-  textFile: {fileID: 4900000, guid: ce342fbb63bd8a0409d41452d60a8df5, type: 3}
   player: {fileID: 0}
-  currentLine: 0
-  endAtLine: 0
   isActive: 0
 --- !u!114 &114505771528271754
 MonoBehaviour:

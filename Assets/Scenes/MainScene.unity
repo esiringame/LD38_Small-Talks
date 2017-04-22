@@ -245,9 +245,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114670798712177718, guid: a72f932d2c1d5c64db1b524baca251cb,
         type: 2}
-      propertyPath: TextBoxManager
+      propertyPath: _textBoxManager
       value: 
-      objectReference: {fileID: 1125673482}
+      objectReference: {fileID: 1125673483}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a72f932d2c1d5c64db1b524baca251cb, type: 2}
   m_IsPrefabParent: 0
@@ -686,11 +686,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1125673482 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1228211271480604, guid: bad2cf0302afd0649beff8ec99c5967f,
+--- !u!114 &1125673483 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114399569905575592, guid: bad2cf0302afd0649beff8ec99c5967f,
     type: 2}
   m_PrefabInternal: {fileID: 656239505}
+  m_Script: {fileID: 11500000, guid: 608185a49d15d60408764ccbc4c4e0c4, type: 3}
 --- !u!1001 &1151629068
 Prefab:
   m_ObjectHideFlags: 0

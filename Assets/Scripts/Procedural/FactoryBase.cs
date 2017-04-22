@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using UnityEngine;
 
@@ -8,13 +9,21 @@ public abstract class FactoryBase : MonoBehaviour
     public float SpawnDelayMin = 1;
     public RectTransform Bounds;
     public RectTransform SpawnZone;
+
     private float _spawnTimer;
     private readonly List<GameObject> _spawnedObjects = new List<GameObject>();
     private readonly List<GameObject> _aliveObjects = new List<GameObject>();
 
+    public ReadOnlyCollection<GameObject> AliveObjects { get; private set; }
+
     public bool IsAvailable
     {
         get { return _spawnTimer >= SpawnDelayMin; }
+    }
+
+    protected FactoryBase()
+    {
+        AliveObjects = _aliveObjects.AsReadOnly();
     }
 
     public void Start()
@@ -37,6 +46,7 @@ public abstract class FactoryBase : MonoBehaviour
         foreach (GameObject o in toDestroy)
         {
             _aliveObjects.Remove(o);
+            OnObjectDestroy(o);
             Destroy(o);
         }
     }
@@ -56,4 +66,5 @@ public abstract class FactoryBase : MonoBehaviour
     }
 
     protected abstract GameObject LocalInstantiate();
+    protected abstract void OnObjectDestroy(GameObject obj);
 }

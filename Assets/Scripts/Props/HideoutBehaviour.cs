@@ -16,6 +16,7 @@ public class HideoutBehaviour : MonoBehaviour
     private void Fill()
     {
         _spriteRenderer.sprite = FullSprite;
+        Debug.Log("Ou pas faut voir");
     }
 
     private void Empty()
@@ -25,6 +26,7 @@ public class HideoutBehaviour : MonoBehaviour
 
     public void OnHide()
     {
+        Debug.Log("C'est caché");
         Fill();
     }
 

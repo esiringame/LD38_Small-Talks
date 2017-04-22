@@ -14,4 +14,9 @@ public class PedestrianFactory : FactoryBase
         pedestrian.AddComponent<Scrollable>();
         return pedestrian;
     }
+
+    protected override void OnObjectDestroy(GameObject obj)
+    {
+
+    }
 }

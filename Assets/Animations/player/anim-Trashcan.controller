@@ -8,7 +8,7 @@ AnimatorController:
   m_Name: anim-Trashcan
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: isFull
+  - m_Name: isEmpty
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -34,8 +34,8 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: isFull
+  - m_ConditionMode: 2
+    m_ConditionEvent: isEmpty
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102059531147183068}
@@ -58,8 +58,8 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: isFull
+  - m_ConditionMode: 1
+    m_ConditionEvent: isEmpty
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102067231675713358}

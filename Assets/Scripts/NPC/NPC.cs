@@ -9,8 +9,10 @@ public class NPC : MonoBehaviour {
 
     public GameObject Player;
     public float TriggerDistance = 3.0f;
+    public float CatchDistance = .2f;
 
     public bool Triggered = false;
+    public bool Caught = false;
 
     private Transform _transform;
     private Transform _playerTransform;
@@ -23,11 +25,17 @@ public class NPC : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        // Triggered ?
+        // Player distance
         Vector2 heading = _transform.position - _playerTransform.position;
         float playerDistance = heading.magnitude;
         Triggered = playerDistance < TriggerDistance;
-        Debug.Log("Distance: " + playerDistance);
+
+        // Catch Player ?
+        Caught = playerDistance < CatchDistance;
+        if (Caught) {
+            Debug.Log("Got it!");
+            //Player.caught()
+        }
 
         // Walk
         Vector3 oneDirection = Direction;

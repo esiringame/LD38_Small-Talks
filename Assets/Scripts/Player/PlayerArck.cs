@@ -22,7 +22,7 @@ public class PlayerArck : MonoBehaviour
         Hidding,
         Talking
     }
-
+    [SerializeField]
     private State state;
 
     // Use this for initialization

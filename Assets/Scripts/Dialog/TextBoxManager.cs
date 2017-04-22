@@ -10,8 +10,8 @@ public class TextBoxManager : MonoBehaviour {
     public TextAsset textFile;
 
     private string[] textLines;
-    private int currentLine;
-    private int endAtLine;
+    public int currentLine;
+    public int endAtLine;
 
     // Use this for initialization
     void Start()

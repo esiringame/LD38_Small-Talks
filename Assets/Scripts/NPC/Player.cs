@@ -18,12 +18,15 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		_transform.localPosition += Direction * WalkingSpeed * Time.deltaTime;
-	}
+        if (TextBoxManager.GetComponent<TextBoxManager>().currentLine == TextBoxManager.GetComponent<TextBoxManager>().endAtLine)
+        {
+            isTalking = false;
+        }
+    }
 
-    public bool triggered(int indexEnemy)
+    public void triggered(int indexEnemy)
     {
         TextBoxManager.GetComponent<TextBoxManager>().talkTriggered(indexEnemy);
         isTalking = true;
-        return isTalking;
     }
 }

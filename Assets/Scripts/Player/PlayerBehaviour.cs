@@ -18,6 +18,8 @@ public class PlayerBehaviour : MonoBehaviour {
     [SerializeField]
     private State _state;
 
+    public bool isFacingRight;
+
     public enum State
     {
         Idle,
@@ -37,6 +39,8 @@ public class PlayerBehaviour : MonoBehaviour {
         _down = -transform.up;
         _right = transform.right;
         _left = -transform.right;
+
+        isFacingRight = true;
     }
 
     void Movement()
@@ -46,6 +50,7 @@ public class PlayerBehaviour : MonoBehaviour {
             Vector3 move = Vector3.zero;
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
+            isFacingRight = horizontal > 0;
             if (vertical > 0)
             {
                 move += _up;
@@ -57,6 +62,7 @@ public class PlayerBehaviour : MonoBehaviour {
             if (horizontal > 0)
             {
                 move += _right;
+                 
             }
             else if (horizontal < 0)
             {

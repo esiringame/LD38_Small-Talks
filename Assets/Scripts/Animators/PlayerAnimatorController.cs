@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class PlayerAnimatorController : MonoBehaviour {
 
-    PlayerBehaviour.State _state;
+    PlayerBehaviour _player;
     Animator _animator;
     AudioSource _audio;
+    SpriteRenderer _renderer;
+
 
 	// Use this for initialization
 	void Start () {
-        _state = transform.GetComponent<PlayerBehaviour>().GetState();
+        _player = transform.GetComponent<PlayerBehaviour>();
         _animator = GetComponent<Animator>();
         _audio = GetComponent<AudioSource>();
+        _renderer = GetComponent<SpriteRenderer>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        _state = transform.GetComponent<PlayerBehaviour>().GetState();
-		if(_state == PlayerBehaviour.State.Walking)
+        _renderer.flipX = !_player.isFacingRight;
+		if(_player.GetState() == PlayerBehaviour.State.Walking)
         {
             _animator.SetBool("isWalking", true);
             if(!_audio.isPlaying)

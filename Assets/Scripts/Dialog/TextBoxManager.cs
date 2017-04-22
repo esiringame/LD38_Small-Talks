@@ -3,32 +3,50 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using UnityEditor;
+using System.Text;
 
 public class TextBoxManager : MonoBehaviour {
 
     public Text theText;
-    public TextAsset textFile;
+    private string allTextInFile;
     public PlayerBehaviour player;
     private string[] textLines;
-    public int currentLine;
-    public int endAtLine;
+    private int currentLine;
+    private int endAtLine;
     public bool isActive;
 
     // Use this for initialization
     void Start()
     {
         gameObject.SetActive(false);
-        if (textFile != null)
-        {
-            textLines = textFile.text.Split('\n');
-        }
-        endAtLine = textLines.Length;
     }
 
     public void talkTriggered(int enemyIndex)
     {
         gameObject.SetActive(true);
-        isActive = true;
+
+        StreamReader theReader;
+        if (enemyIndex == 1)
+        {
+            theReader = new StreamReader("Assets/Naration/Quentin.txt", Encoding.Default);
+            allTextInFile = theReader.ReadToEnd();
+        }
+        else if (enemyIndex == 2)
+        {
+            theReader = new StreamReader("Assets/Naration/Fred.txt", Encoding.Default);
+            allTextInFile = theReader.ReadToEnd();
+        }
+        else
+        {
+            theReader = new StreamReader("Assets/Naration/Else.txt", Encoding.Default);
+            allTextInFile = theReader.ReadToEnd();
+        }
+        if (allTextInFile != null)
+        {
+            textLines = allTextInFile.Split('\n');
+            endAtLine = textLines.Length;
+        }
     }
 
     private void Update()

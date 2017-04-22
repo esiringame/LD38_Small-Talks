@@ -18,7 +18,7 @@ public class NPC : MonoBehaviour {
 
     private Transform _transform;
     private Transform _playerTransform;
-    private int _indexNPC = 1;
+    public int _indexNPC;
     private State _stateNPC;
 
     public enum State

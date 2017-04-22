@@ -16,10 +16,8 @@ public class PlayerAnimatorController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         state = transform.GetComponent<PlayerArck>().getState();
-        Debug.Log(state);
 		if(state == PlayerArck.State.Walking)
         {
-            Debug.Log("WL" + state);
             animator.SetBool("isWalking", true);
         } else
         {

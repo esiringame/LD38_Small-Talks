@@ -62,7 +62,7 @@ public class NPC : MonoBehaviour {
         {
             _stateNPC = State.idle;
         }
-        else if ((_stateNPC == State.idle && _player.GetComponent<Player>().getState() != global::Player.State.Talking) || (_stateNPC == State.triggered && _player.GetComponent<Player>().getState() == global::Player.State.Talking))
+        else if ((_stateNPC == State.idle && _player.GetComponent<PlayerBehaviour>().GetState() != global::PlayerBehaviour.State.Talking) || (_stateNPC == State.triggered && _player.GetComponent<PlayerBehaviour>().GetState() == global::PlayerBehaviour.State.Talking))
         {
             _stateNPC = State.flee;
         }
@@ -89,7 +89,7 @@ public class NPC : MonoBehaviour {
 
     void caught()
     {
-        _player.GetComponent<Player>().triggered(_indexNPC);
+        _player.GetComponent<PlayerBehaviour>().OnTrigger(_indexNPC);
     }
 
 

@@ -68,7 +68,7 @@ public class PlayerArck : MonoBehaviour
             if (move != Vector3.zero)
             {
                 state = State.Walking;
-                transform.position += (move * Time.deltaTime);
+                transform.position += (move.normalized * Time.deltaTime);
             }
             else
             {

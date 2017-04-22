@@ -3,30 +3,136 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-
-    public float WalkingSpeed = 1.0f;
-    public Vector3 Direction = Vector3.left;
-    private Transform _transform;
+    
     public GameObject TextBoxManager;
-    public bool isTalking = false;
 
+  
+    [SerializeField]
+    float horSpeed, verSpeed;
+    Vector3 Up, Down, Right, Left;
+    [SerializeField]
+    bool nearNPC, nearHideout, dialogOn;
+ 
+    [SerializeField]
+    HideoutBehaviour hideout;
+    [SerializeField]
+    private State state;
+    public enum State
+    {
+        Idle,
+        Walking,
+        Hidding,
+        Talking
+    }
+
+    public State getState()
+    {
+        return state;
+    }
     // Use this for initialization
     void Start () {
-	    _transform = GetComponent<Transform>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		_transform.localPosition += Direction * WalkingSpeed * Time.deltaTime;
-        if (TextBoxManager.GetComponent<TextBoxManager>().currentLine == TextBoxManager.GetComponent<TextBoxManager>().endAtLine)
+        state = State.Idle;
+        Up = transform.up;
+        Down = -transform.up;
+        Right = transform.right;
+        Left = -transform.right;
+    }
+
+    void Movement()
+    {
+        if (state == State.Idle || state == State.Walking)
         {
-            isTalking = false;
+            Vector3 move = Vector3.zero;
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical");
+            if (vertical > 0)
+            {
+                move += Up;
+            }
+            else if (vertical < 0)
+            {
+                move += Down;
+            }
+            if (horizontal > 0)
+            {
+                move += Right;
+            }
+            else if (horizontal < 0)
+            {
+                move += Left;
+            }
+            if (move != Vector3.zero)
+            {
+                state = State.Walking;
+                move = move.normalized;
+                move.Scale(new Vector3(horSpeed, verSpeed, 1) * Time.deltaTime);
+                transform.position += move;
+            }
+            else
+            {
+                state = State.Idle;
+            }
         }
+    }
+
+    // Update is called once per frame
+    void Update () {
+        Action();
+        Movement();
+    }
+
+    public void onRelease()
+    {
+        state = State.Idle;
     }
 
     public void triggered(int indexEnemy)
     {
         TextBoxManager.GetComponent<TextBoxManager>().talkTriggered(indexEnemy);
-        isTalking = true;
+        state = State.Talking;
     }
+
+    void Action()
+    {
+        if (Input.GetButtonDown("Action"))
+        {
+            if (state == State.Idle || state == State.Walking)
+            {
+                if (nearHideout)
+                {
+                    Hide();
+                }
+                else if (nearNPC)
+                {
+                    dialogOn = true;
+                    triggered(1);
+                }
+            }
+            else if (state == State.Hidding)
+            {
+                Unhide();
+            }
+            else
+            {
+                triggered(1);
+            }
+        }
+    }
+
+    void Hide()
+    {
+        Debug.Log("Bah là on cache tu vois");
+        hideout.OnHide();
+        GetComponent<SpriteRenderer>().enabled = false;
+        state = State.Hidding;
+    }
+
+    void Unhide()
+    {
+        Debug.Log("Bah là on décache tu vois");
+        hideout.OnUnhide();
+        GetComponent<SpriteRenderer>().enabled = true;
+        state = State.Idle;
+    }
+
 }

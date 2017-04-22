@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class GameGenerator : MonoBehaviour
+public class ProceduralEngine : MonoBehaviour
 {
     public float SpawnDelayMin = 0.5f;
     public float SpawnDelayMax = 3;

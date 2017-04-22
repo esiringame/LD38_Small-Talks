@@ -3,7 +3,12 @@ using UnityEngine;
 
 public class PedestrianFactory : FactoryBase
 {
-    public override GameObject Instantiate()
+    public PedestrianFactory()
+    {
+        SpawnDelayMin = 0.5f;
+    }
+
+    protected override GameObject LocalInstantiate()
     {
         var pedestrian = new GameObject();
         pedestrian.AddComponent<SpriteRenderer>();

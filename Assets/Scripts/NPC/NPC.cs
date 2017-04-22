@@ -113,8 +113,6 @@ public class NPC : MonoBehaviour {
                 caught();
                 break;
             case State.idle:
-                Debug.Log(Player.GetComponent<Player>().isTalking);
-                Debug.Log(_stateNPC);
                 idle();
                 break;
             case State.flee:

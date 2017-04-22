@@ -10,18 +10,23 @@ public class TextBoxManager : MonoBehaviour {
     public TextAsset textFile;
 
     private string[] textLines;
-    private int currentLine;
-    private int endAtLine;
+    public int currentLine;
+    public int endAtLine;
 
     // Use this for initialization
     void Start()
     {
-
+        gameObject.SetActive(false);
         if (textFile != null)
         {
             textLines = textFile.text.Split('\n');
         }
         endAtLine = textLines.Length;
+    }
+
+    public void talkTriggered(int enemyIndex)
+    {
+        gameObject.SetActive(true);
     }
 
     private void Update()

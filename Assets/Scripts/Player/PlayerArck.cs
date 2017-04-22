@@ -15,7 +15,7 @@ public class PlayerArck : MonoBehaviour
     /*[SerializeField]
     Hideout hideout;*/
 
-    private enum State
+    public enum State
     {
         Idle,
         Walking,
@@ -24,6 +24,11 @@ public class PlayerArck : MonoBehaviour
     }
     [SerializeField]
     private State state;
+
+    public State getState()
+    {
+        return state;
+    }
 
     // Use this for initialization
     void Start()

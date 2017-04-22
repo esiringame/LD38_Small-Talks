@@ -4,7 +4,7 @@ public class PrefabFactory : FactoryBase
 {
     public GameObject Prefab;
 
-    public override GameObject Instantiate()
+    protected override GameObject LocalInstantiate()
     {
         return Instantiate(Prefab);
     }

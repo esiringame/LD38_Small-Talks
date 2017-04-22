@@ -6,11 +6,13 @@ public class PlayerAnimatorController : MonoBehaviour {
 
     PlayerArck.State state;
     Animator animator;
+    AudioSource audio;
 
 	// Use this for initialization
 	void Start () {
         state = transform.GetComponent<PlayerArck>().getState();
         animator = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -19,6 +21,11 @@ public class PlayerAnimatorController : MonoBehaviour {
 		if(state == PlayerArck.State.Walking)
         {
             animator.SetBool("isWalking", true);
+            if(!audio.isPlaying)
+            {
+                Debug.Log("oui");
+                audio.Play();
+            }
         } else
         {
             animator.SetBool("isWalking", false);

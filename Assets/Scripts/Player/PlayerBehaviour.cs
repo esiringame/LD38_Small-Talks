@@ -14,7 +14,7 @@ public class PlayerBehaviour : MonoBehaviour {
     bool nearNPC, nearHideout, dialogOn;
  
     [SerializeField]
-    HideoutBehaviour hideout;
+    TrashcanAnimatorController hideout;
     [SerializeField]
     private State state;
 

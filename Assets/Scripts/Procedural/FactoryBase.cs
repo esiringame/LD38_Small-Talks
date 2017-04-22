@@ -7,7 +7,7 @@ public abstract class FactoryBase : MonoBehaviour
 {
     public int ProbabilityWeight = 1;
     public float SpawnDelayMin = 1;
-    public RectTransform Bounds;
+    public RectTransform LifeZone;
     public RectTransform SpawnZone;
 
     private float _spawnTimer;
@@ -28,21 +28,21 @@ public abstract class FactoryBase : MonoBehaviour
 
     public void Start()
     {
-        Bounds = GetComponent<RectTransform>();
+        LifeZone = GetComponent<RectTransform>();
     }
 
     public void Update()
     {
         _spawnTimer += Time.deltaTime;
         
-        GameObject[] toAlive = _spawnedObjects.Where(obj => GameObjectIntersectRect(obj, Bounds.rect)).ToArray();
+        GameObject[] toAlive = _spawnedObjects.Where(obj => GameObjectIntersectRect(obj, LifeZone.rect)).ToArray();
         foreach (GameObject o in toAlive)
         {
             _spawnedObjects.Remove(o);
             _aliveObjects.Add(o);
         }
 
-        GameObject[] toDestroy = _aliveObjects.Where(obj => !GameObjectIntersectRect(obj, Bounds.rect)).ToArray();
+        GameObject[] toDestroy = _aliveObjects.Where(obj => !GameObjectIntersectRect(obj, LifeZone.rect)).ToArray();
         foreach (GameObject o in toDestroy)
         {
             _aliveObjects.Remove(o);

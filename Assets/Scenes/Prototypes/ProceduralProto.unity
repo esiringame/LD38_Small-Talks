@@ -262,6 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProbabilityWeight: 1
   SpawnDelayMin: 0.5
+  LifeZone: {fileID: 1734714587}
   SpawnZone: {fileID: 651204847}
 --- !u!114 &1734714586
 MonoBehaviour:
@@ -276,7 +277,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnDelayMin: 0.5
   SpawnDelayMax: 1
-  Bounds: {fileID: 1734714587}
 --- !u!224 &1734714587
 RectTransform:
   m_ObjectHideFlags: 0
@@ -321,5 +321,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProbabilityWeight: 1
   SpawnDelayMin: 2
+  LifeZone: {fileID: 1734714587}
   SpawnZone: {fileID: 651204847}
   Prefab: {fileID: 1628263139833500, guid: ac4939b6dcd17da419723413caf45592, type: 2}

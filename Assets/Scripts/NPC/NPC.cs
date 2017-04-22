@@ -18,7 +18,7 @@ public class NPC : MonoBehaviour {
 
     private Transform _transform;
     private Transform _playerTransform;
-    private int _indexNPC = 1;
+    public int _indexNPC;
     private State _stateNPC;
 
     public enum State
@@ -29,6 +29,11 @@ public class NPC : MonoBehaviour {
         idle, // during dialog state
         flee // ignore player (after dialog)
     };
+
+    public State getState()
+    {
+        return _stateNPC;
+    }
 
     // Use this for initialization
     void Start () {
@@ -62,7 +67,7 @@ public class NPC : MonoBehaviour {
         {
             _stateNPC = State.idle;
         }
-        else if ((_stateNPC == State.idle && _player.GetComponent<Player>().getState() != global::Player.State.Talking) || (_stateNPC == State.triggered && _player.GetComponent<Player>().getState() == global::Player.State.Talking))
+        else if ((_stateNPC == State.idle && _player.GetComponent<PlayerBehaviour>().GetState() != global::PlayerBehaviour.State.Talking) || (_stateNPC == State.triggered && _player.GetComponent<PlayerBehaviour>().GetState() == global::PlayerBehaviour.State.Talking))
         {
             _stateNPC = State.flee;
         }
@@ -89,7 +94,7 @@ public class NPC : MonoBehaviour {
 
     void caught()
     {
-        _player.GetComponent<Player>().triggered(_indexNPC);
+        _player.GetComponent<PlayerBehaviour>().OnTrigger(_indexNPC);
     }
 
 

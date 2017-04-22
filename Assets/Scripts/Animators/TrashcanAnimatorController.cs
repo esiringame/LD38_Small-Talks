@@ -17,4 +17,26 @@ public class TrashcanAnimatorController : MonoBehaviour {
         animator.SetBool("isEmpty", isEmpty);
 	}
 
+    private void Fill()
+    {
+        isEmpty = false;
+        Debug.Log("Ou pas faut voir");
+    }
+
+    private void Empty()
+    {
+        isEmpty = true;
+    }
+
+    public void OnHide()
+    {
+        Debug.Log("C'est caché");
+        Fill();
+    }
+
+    public void OnUnhide()
+    {
+        Empty();
+    }
+
 }

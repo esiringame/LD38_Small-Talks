@@ -8,4 +8,8 @@ public class PrefabFactory : FactoryBase
     {
         return Instantiate(Prefab);
     }
+
+    protected override void OnObjectDestroy(GameObject obj)
+    {
+    }
 }

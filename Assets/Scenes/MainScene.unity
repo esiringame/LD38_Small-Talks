@@ -243,42 +243,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4644249823353792, guid: a72f932d2c1d5c64db1b524baca251cb, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644249823353792, guid: a72f932d2c1d5c64db1b524baca251cb, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644249823353792, guid: a72f932d2c1d5c64db1b524baca251cb, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1744746265059892, guid: a72f932d2c1d5c64db1b524baca251cb, type: 2}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 114670798712177718, guid: a72f932d2c1d5c64db1b524baca251cb,
         type: 2}
       propertyPath: TextBoxManager
       value: 
       objectReference: {fileID: 1125673482}
-    - target: {fileID: 114670798712177718, guid: a72f932d2c1d5c64db1b524baca251cb,
-        type: 2}
-      propertyPath: horSpeed
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114670798712177718, guid: a72f932d2c1d5c64db1b524baca251cb,
-        type: 2}
-      propertyPath: verSpeed
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114670798712177718, guid: a72f932d2c1d5c64db1b524baca251cb,
-        type: 2}
-      propertyPath: nearNPC
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a72f932d2c1d5c64db1b524baca251cb, type: 2}
   m_IsPrefabParent: 0
@@ -329,16 +298,6 @@ Prefab:
     - target: {fileID: 1088714227842636, guid: 1d5a20315a68348ff8c9a2ba6db44a35, type: 2}
       propertyPath: m_Name
       value: Florent
-      objectReference: {fileID: 0}
-    - target: {fileID: 114394564149674834, guid: 1d5a20315a68348ff8c9a2ba6db44a35,
-        type: 2}
-      propertyPath: WalkingSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114394564149674834, guid: 1d5a20315a68348ff8c9a2ba6db44a35,
-        type: 2}
-      propertyPath: _indexNPC
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d5a20315a68348ff8c9a2ba6db44a35, type: 2}

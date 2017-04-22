@@ -10,7 +10,7 @@ public class NPCBehaviour : MonoBehaviour {
     public float MaxSpeed = 99.99f;
     public float Acceleration = .1f;
     private float _walkingSpeed;
-
+  
     private GameObject _player;
 
     public float TriggerDistance = 3.0f;

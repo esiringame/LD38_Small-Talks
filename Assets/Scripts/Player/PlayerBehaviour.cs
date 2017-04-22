@@ -11,7 +11,7 @@ public class PlayerBehaviour : MonoBehaviour {
     float _horSpeed, _verSpeed;
     Vector3 _up, _down, _right, _left;
     [SerializeField]
-    bool _nearNPC, _nearHideout, _dialogOn;
+    bool _nearNPC, _nearHideout;
  
     [SerializeField]
     TrashcanAnimatorController _hideout;
@@ -109,19 +109,10 @@ public class PlayerBehaviour : MonoBehaviour {
                 {
                     Hide();
                 }
-                else if (_nearNPC)
-                {
-                    _dialogOn = true;
-                    OnTrigger(1);
-                }
             }
             else if (_state == State.Hidding)
             {
                 Unhide();
-            }
-            else
-            {
-                OnTrigger(1);
             }
         }
     }

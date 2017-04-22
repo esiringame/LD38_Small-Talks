@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PedestrianFactory : FactoryBase
 {
@@ -14,5 +13,10 @@ public class PedestrianFactory : FactoryBase
         pedestrian.AddComponent<SpriteRenderer>();
         pedestrian.AddComponent<Scrollable>();
         return pedestrian;
+    }
+
+    protected override void OnObjectDestroy(GameObject obj)
+    {
+
     }
 }

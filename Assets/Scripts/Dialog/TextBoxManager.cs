@@ -16,12 +16,17 @@ public class TextBoxManager : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
+        gameObject.SetActive(false);
         if (textFile != null)
         {
             textLines = textFile.text.Split('\n');
         }
         endAtLine = textLines.Length;
+    }
+
+    public void talkTriggered(int enemyIndex)
+    {
+        gameObject.SetActive(true);
     }
 
     private void Update()

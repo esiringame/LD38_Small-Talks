@@ -192,7 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Direction: {x: -1, y: 0, z: 0}
   WalkingSpeed: 5
-  MaxSpeed: 3
+  MaxSpeed: 5
   Acceleration: 0.1
   Player: {fileID: 1427181722}
   TriggerDistance: 5
@@ -534,7 +534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Direction: {x: -1, y: 0, z: 0}
   WalkingSpeed: 5
-  MaxSpeed: 18
+  MaxSpeed: 5
   Acceleration: 0.1
   Player: {fileID: 1427181722}
   TriggerDistance: 5

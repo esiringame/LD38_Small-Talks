@@ -15,15 +15,20 @@ public class PlayerArck : MonoBehaviour
     /*[SerializeField]
     Hideout hideout;*/
 
-    private enum State
+    public enum State
     {
         Idle,
         Walking,
         Hidding,
         Talking
     }
-
+    [SerializeField]
     private State state;
+
+    public State getState()
+    {
+        return state;
+    }
 
     // Use this for initialization
     void Start()
@@ -63,7 +68,7 @@ public class PlayerArck : MonoBehaviour
             if (move != Vector3.zero)
             {
                 state = State.Walking;
-                transform.position += (move * Time.deltaTime);
+                transform.position += (move.normalized * Time.deltaTime);
             }
             else
             {

@@ -238,9 +238,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1734714587}
+  - component: {fileID: 1734714588}
   - component: {fileID: 1734714586}
   - component: {fileID: 1734714585}
-  - component: {fileID: 1734714588}
+  - component: {fileID: 1734714589}
   m_Layer: 0
   m_Name: Root
   m_TagString: Untagged
@@ -305,3 +306,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3.65
+--- !u!114 &1734714589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1734714584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a0d6db236564e17afdd43092f365602, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProbabilityWeight: 1
+  Prefab: {fileID: 1628263139833500, guid: ac4939b6dcd17da419723413caf45592, type: 2}

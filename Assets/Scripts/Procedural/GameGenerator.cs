@@ -28,6 +28,7 @@ public class GameGenerator : MonoBehaviour
         if (_spawnTimer > SpawnDelay)
         {
             GameObject spawned = GetRandomFactory().Instantiate();
+            spawned.transform.parent = gameObject.transform;
 
             Rect rect = SpawnZone.rect;
             spawned.transform.position = SpawnZone.localToWorldMatrix * new Vector4(Random.Range(rect.xMin, rect.xMax), Random.Range(rect.yMin, rect.yMax), 0, 1);

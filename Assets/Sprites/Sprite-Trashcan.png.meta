@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 1782322d3ed56fc45b460e20a69203d3
-timeCreated: 1492873087
+timeCreated: 1492876954
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -85,8 +85,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 17
-        height: 22
+        width: 19
+        height: 24
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -96,10 +96,10 @@ TextureImporter:
       name: Sprite-Trashcan_1
       rect:
         serializedVersion: 2
-        x: 17
+        x: 19
         y: 0
-        width: 17
-        height: 22
+        width: 19
+        height: 24
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

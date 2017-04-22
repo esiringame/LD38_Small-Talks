@@ -194,7 +194,6 @@ MonoBehaviour:
   WalkingSpeed: 5
   MaxSpeed: 5
   Acceleration: 0.1
-  Player: {fileID: 1427181722}
   TriggerDistance: 5
   CatchDistance: 0.2
 --- !u!114 &158421934
@@ -433,10 +432,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1228211271480604, guid: bad2cf0302afd0649beff8ec99c5967f, type: 2}
-      propertyPath: m_TagString
-      value: dialogtextpanel
-      objectReference: {fileID: 0}
     - target: {fileID: 114399569905575592, guid: bad2cf0302afd0649beff8ec99c5967f,
         type: 2}
       propertyPath: player
@@ -536,7 +531,6 @@ MonoBehaviour:
   WalkingSpeed: 5
   MaxSpeed: 5
   Acceleration: 0.1
-  Player: {fileID: 1427181722}
   TriggerDistance: 5
   CatchDistance: 0.2
 --- !u!114 &970028126
@@ -677,7 +671,7 @@ GameObject:
   - component: {fileID: 1427181725}
   m_Layer: 0
   m_Name: Florent
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

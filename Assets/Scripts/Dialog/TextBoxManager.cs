@@ -6,16 +6,12 @@ using System.IO;
 
 public class TextBoxManager : MonoBehaviour {
 
-    public GameObject textBox;
-
     public Text theText;
     public TextAsset textFile;
-    public string[] textLines;
 
-    public int currentLine;
-    protected int endAtLine;
-
-    //public PlayerController player;
+    private string[] textLines;
+    private int currentLine;
+    private int endAtLine;
 
     // Use this for initialization
     void Start()
@@ -36,7 +32,7 @@ public class TextBoxManager : MonoBehaviour {
             currentLine++;
             if (currentLine == endAtLine)
             {
-                textBox.SetActive(false);
+                gameObject.SetActive(false);
             }
         }
     }

@@ -201,10 +201,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d886ef29b054f549034c8d014a5b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WalkingSpeed: 1
-  Direction: {x: 1, y: 0, z: 0}
   TextBoxManager: {fileID: 0}
-  isTalking: 0
+  horSpeed: 2
+  verSpeed: 2
+  nearNPC: 0
+  nearHideout: 0
+  dialogOn: 0
+  hideout: {fileID: 0}
+  state: 0
 --- !u!1 &212442324
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,11 +278,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 463b49d79778b43bbb8d80ecc1692715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoesHeKnowUPR: 1
   Direction: {x: -1, y: 0, z: 0}
   WalkingSpeed: 0.52
   MaxSpeed: 99.99
   Acceleration: 0.34
-  Player: {fileID: 181803938}
   TriggerDistance: 3
   CatchDistance: 0.2
 --- !u!114 &212442327
@@ -387,11 +391,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 463b49d79778b43bbb8d80ecc1692715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoesHeKnowUPR: 1
   Direction: {x: -1, y: 0, z: 0}
   WalkingSpeed: 1.58
   MaxSpeed: 99.99
   Acceleration: 0.1
-  Player: {fileID: 181803938}
   TriggerDistance: 3
   CatchDistance: 0.2
 --- !u!114 &263555352
@@ -529,11 +533,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 463b49d79778b43bbb8d80ecc1692715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoesHeKnowUPR: 1
   Direction: {x: -1, y: 0, z: 0}
   WalkingSpeed: 0.79
   MaxSpeed: 99.99
   Acceleration: 0.1
-  Player: {fileID: 181803938}
   TriggerDistance: 3
   CatchDistance: 0.2
 --- !u!114 &286139415
@@ -629,11 +633,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 463b49d79778b43bbb8d80ecc1692715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoesHeKnowUPR: 1
   Direction: {x: -1, y: 0, z: 0}
   WalkingSpeed: 0.52
   MaxSpeed: 99.99
   Acceleration: 0.34
-  Player: {fileID: 181803938}
   TriggerDistance: 3
   CatchDistance: 0.2
 --- !u!114 &333255390
@@ -878,11 +882,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 463b49d79778b43bbb8d80ecc1692715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoesHeKnowUPR: 1
   Direction: {x: -1, y: 0, z: 0}
   WalkingSpeed: 0.68
   MaxSpeed: 0.81
   Acceleration: 0.1
-  Player: {fileID: 181803938}
   TriggerDistance: 3
   CatchDistance: 0.2
 --- !u!114 &882134001
@@ -939,6 +943,11 @@ Prefab:
     - target: {fileID: 4979279076049740, guid: 1d5a20315a68348ff8c9a2ba6db44a35, type: 2}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114394564149674834, guid: 1d5a20315a68348ff8c9a2ba6db44a35,
+        type: 2}
+      propertyPath: DoesHeKnowUPR
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d5a20315a68348ff8c9a2ba6db44a35, type: 2}
@@ -1012,11 +1021,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 463b49d79778b43bbb8d80ecc1692715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoesHeKnowUPR: 1
   Direction: {x: -1, y: 0, z: 0}
   WalkingSpeed: 1.58
   MaxSpeed: 99.99
   Acceleration: 0.1
-  Player: {fileID: 181803938}
   TriggerDistance: 3
   CatchDistance: 0.2
 --- !u!114 &1721161259
@@ -1182,11 +1191,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 463b49d79778b43bbb8d80ecc1692715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoesHeKnowUPR: 1
   Direction: {x: -1, y: 0, z: 0}
   WalkingSpeed: 0.68
   MaxSpeed: 0.81
   Acceleration: 0.1
-  Player: {fileID: 181803938}
   TriggerDistance: 3
   CatchDistance: 0.2
 --- !u!114 &2049753417

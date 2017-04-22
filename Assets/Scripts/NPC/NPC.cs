@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour {
 
+    public bool DoesHeKnowUPR = true;
     public Vector3 Direction = Vector3.left;
     public float WalkingSpeed = 0.8f;
     public float MaxSpeed = 99.99f;
@@ -49,7 +50,7 @@ public class NPC : MonoBehaviour {
         {
             _stateNPC = State.walking;
         }
-        else if (playerDistance < TriggerDistance && _stateNPC == State.walking)
+        else if (playerDistance < TriggerDistance && _stateNPC == State.walking && DoesHeKnowUPR)
         {
             _stateNPC = State.triggered;
         }

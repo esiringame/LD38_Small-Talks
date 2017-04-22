@@ -9,6 +9,7 @@ public abstract class FactoryBase : MonoBehaviour
     public float SpawnDelayMin = 1;
     public RectTransform LifeZone;
     public RectTransform SpawnZone;
+    public GameObject Root;
 
     private float _spawnTimer;
     private readonly List<GameObject> _spawnedObjects = new List<GameObject>();

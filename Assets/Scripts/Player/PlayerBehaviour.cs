@@ -50,7 +50,7 @@ public class PlayerBehaviour : MonoBehaviour {
             Vector3 move = Vector3.zero;
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
-            isFacingRight = horizontal > 0;
+            isFacingRight = horizontal >= 0;
             if (vertical > 0)
             {
                 move += _up;

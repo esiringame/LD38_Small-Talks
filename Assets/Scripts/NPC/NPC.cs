@@ -29,6 +29,11 @@ public class NPC : MonoBehaviour {
         flee // ignore player (after dialog)
     };
 
+    public State getState()
+    {
+        return _stateNPC;
+    }
+
     // Use this for initialization
     void Start () {
         _player = GameObject.FindWithTag("Player");

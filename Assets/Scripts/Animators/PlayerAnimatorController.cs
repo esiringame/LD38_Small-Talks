@@ -10,14 +10,14 @@ public class PlayerAnimatorController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        state = transform.GetComponent<Player>().getState();
+        state = GetComponent<Player>().getState();
         animator = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        state = transform.GetComponent<Player>().getState();
+        state = GetComponent<Player>().getState();
 		if(state == Player.State.Walking)
         {
             animator.SetBool("isWalking", true);

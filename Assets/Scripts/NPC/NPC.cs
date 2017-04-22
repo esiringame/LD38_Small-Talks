@@ -15,15 +15,12 @@ public class NPC : MonoBehaviour {
     public float TriggerDistance = 3.0f;
     public float CatchDistance = .2f;
 
-    public bool Triggered = false;
-    public bool Caught = false;
-
     private Transform _transform;
     private Transform _playerTransform;
     private int _indexNPC = 1;
-    public State _stateNPC;
+    private State _stateNPC;
 
-    public enum State
+    private enum State
     {
         walking, // ignore player
         triggered, // walking to player

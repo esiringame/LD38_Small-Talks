@@ -190,13 +190,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 463b49d79778b43bbb8d80ecc1692715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WalkingSpeed: 600
   Direction: {x: -1, y: 0, z: 0}
+  WalkingSpeed: 600
+  MaxSpeed: 1564.83
+  Acceleration: 0.1
   Player: {fileID: 1427181722}
   TriggerDistance: 500
   CatchDistance: 10
-  Triggered: 0
-  Caught: 0
 --- !u!114 &158421934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,13 +527,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 463b49d79778b43bbb8d80ecc1692715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WalkingSpeed: 600
   Direction: {x: -1, y: 0, z: 0}
+  WalkingSpeed: 600
+  MaxSpeed: 1801.1
+  Acceleration: 0.1
   Player: {fileID: 1427181722}
   TriggerDistance: 500
   CatchDistance: 10
-  Triggered: 0
-  Caught: 0
 --- !u!114 &970028126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -744,6 +744,7 @@ MonoBehaviour:
   WalkingSpeed: 1
   Direction: {x: -1, y: 0, z: 0}
   TextBoxManager: {fileID: 1125673482}
+  isTalking: 0
 --- !u!1 &1462400642
 GameObject:
   m_ObjectHideFlags: 0

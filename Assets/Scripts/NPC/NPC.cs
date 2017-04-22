@@ -60,7 +60,7 @@ public class NPC : MonoBehaviour {
         {
             _stateNPC = State.idle;
         }
-        else if ((_stateNPC == State.idle && !Player.GetComponent<Player>().isTalking) || (_stateNPC == State.triggered && Player.GetComponent<Player>().isTalking))
+        else if ((_stateNPC == State.idle && Player.GetComponent<Player>().getState() != global::Player.State.Talking) || (_stateNPC == State.triggered && Player.GetComponent<Player>().getState() == global::Player.State.Talking))
         {
             _stateNPC = State.flee;
         }

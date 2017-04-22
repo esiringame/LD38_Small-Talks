@@ -8,10 +8,11 @@ public class TextBoxManager : MonoBehaviour {
 
     public Text theText;
     public TextAsset textFile;
-
+    public Player player;
     private string[] textLines;
     public int currentLine;
     public int endAtLine;
+    public bool isActive;
 
     // Use this for initialization
     void Start()
@@ -27,6 +28,7 @@ public class TextBoxManager : MonoBehaviour {
     public void talkTriggered(int enemyIndex)
     {
         gameObject.SetActive(true);
+        isActive = true;
     }
 
     private void Update()
@@ -38,6 +40,8 @@ public class TextBoxManager : MonoBehaviour {
             if (currentLine == endAtLine)
             {
                 gameObject.SetActive(false);
+                isActive = false;
+                player.onRelease();
             }
         }
     }

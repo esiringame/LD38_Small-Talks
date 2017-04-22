@@ -133,8 +133,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 158421930}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2064, y: -488.9018, z: -90}
-  m_LocalScale: {x: 100.6826, y: 100.6826, z: 100.6826}
+  m_LocalPosition: {x: 20, y: -4.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1080617617}
   m_RootOrder: 0
@@ -191,12 +191,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: {x: -1, y: 0, z: 0}
-  WalkingSpeed: 600
-  MaxSpeed: 1564.83
+  WalkingSpeed: 5
+  MaxSpeed: 3
   Acceleration: 0.1
   Player: {fileID: 1427181722}
-  TriggerDistance: 500
-  CatchDistance: 10
+  TriggerDistance: 5
+  CatchDistance: 0.2
 --- !u!114 &158421934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,6 +437,11 @@ Prefab:
       propertyPath: m_TagString
       value: dialogtextpanel
       objectReference: {fileID: 0}
+    - target: {fileID: 114399569905575592, guid: bad2cf0302afd0649beff8ec99c5967f,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1427181725}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bad2cf0302afd0649beff8ec99c5967f, type: 2}
   m_IsPrefabParent: 0
@@ -470,8 +475,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 970028122}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2495, y: -913, z: 0}
-  m_LocalScale: {x: 100.682594, y: 100.682594, z: 100.682594}
+  m_LocalPosition: {x: 25, y: -9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1080617617}
   m_RootOrder: 1
@@ -528,12 +533,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: {x: -1, y: 0, z: 0}
-  WalkingSpeed: 600
-  MaxSpeed: 1801.1
+  WalkingSpeed: 5
+  MaxSpeed: 18
   Acceleration: 0.1
   Player: {fileID: 1427181722}
-  TriggerDistance: 500
-  CatchDistance: 10
+  TriggerDistance: 5
+  CatchDistance: 0.2
 --- !u!114 &970028126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,7 +585,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1080617615}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 689.9018, z: 90}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 158421931}
@@ -635,7 +640,7 @@ Prefab:
     - target: {fileID: 20847303432419102, guid: 430dbca0d62b7a641baa84f81317678a,
         type: 2}
       propertyPath: orthographic size
-      value: 1272.0065
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 20847303432419102, guid: 430dbca0d62b7a641baa84f81317678a,
         type: 2}
@@ -685,7 +690,7 @@ Transform:
   m_GameObject: {fileID: 1427181722}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100.6826, y: 100.6826, z: 100.6826}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258314238}
   m_RootOrder: 0
@@ -741,10 +746,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d886ef29b054f549034c8d014a5b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WalkingSpeed: 1
-  Direction: {x: -1, y: 0, z: 0}
   TextBoxManager: {fileID: 1125673482}
-  isTalking: 0
+  horSpeed: 5
+  verSpeed: 5
+  nearNPC: 1
+  nearHideout: 0
+  dialogOn: 0
+  hideout: {fileID: 0}
+  state: 0
 --- !u!1 &1462400642
 GameObject:
   m_ObjectHideFlags: 0

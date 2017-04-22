@@ -68,10 +68,10 @@ public class Move : MonoBehaviour {
 
         if (Input.GetButtonDown("Action"))
         {
-            if (binNear)
+            /*if (binNear)
             {
 
-            }
+            }*/
         }
     }
 }

@@ -13,13 +13,23 @@ public class HideoutBehaviour : MonoBehaviour
         _spriteRenderer.sprite = EmptySprite;
     }
 
-    public void Fill()
+    private void Fill()
     {
         _spriteRenderer.sprite = FullSprite;
     }
 
-    public void Empty()
+    private void Empty()
     {
         _spriteRenderer.sprite = EmptySprite;
+    }
+
+    public void OnHide()
+    {
+        Fill();
+    }
+
+    public void OnUnhide()
+    {
+        Empty();
     }
 }

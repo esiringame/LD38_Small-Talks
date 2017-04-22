@@ -19,9 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4320893253094624}
-  - component: {fileID: 114220856014881782}
   - component: {fileID: 212865807439137148}
   - component: {fileID: 114825633068345408}
+  - component: {fileID: 114718762332473240}
+  - component: {fileID: 95736650605644874}
   m_Layer: 0
   m_Name: TrashCan
   m_TagString: Untagged
@@ -42,7 +43,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114220856014881782
+--- !u!95 &95736650605644874
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1628263139833500}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f86c5874485554e4ca0c93d0a24bce95, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114718762332473240
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -50,11 +68,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1628263139833500}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3713a473f5ec26f47aa88fc79241e2cf, type: 3}
+  m_Script: {fileID: 11500000, guid: eab4117990b81314e961d8dcdc13716d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FullSprite: {fileID: 21300000, guid: 4bdbed5fc44bdae49a9c64877c70b1a3, type: 3}
-  EmptySprite: {fileID: 21300000, guid: a5fc61aedf0e12c458cddb5748b1b7c8, type: 3}
+  isEmpty: 1
 --- !u!114 &114825633068345408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -98,11 +115,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 1782322d3ed56fc45b460e20a69203d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.17, y: 0.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0

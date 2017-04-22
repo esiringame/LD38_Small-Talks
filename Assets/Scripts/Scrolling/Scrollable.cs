@@ -10,7 +10,10 @@ public class Scrollable : MonoBehaviour
 	}
 	
 	void Update()
-    {
+	{
+	    if (!_scrollingManager.enabled)
+	        return;
+
 		transform.localPosition += Vector3.left * _scrollingManager.Speed * Time.deltaTime;
 	}
 }

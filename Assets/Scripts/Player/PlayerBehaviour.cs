@@ -6,7 +6,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
     [SerializeField]
     private TextBoxManager _textBoxManager;
-  
+
     [SerializeField]
     float _horSpeed, _verSpeed;
     Vector3 _up, _down, _right, _left;
@@ -19,6 +19,8 @@ public class PlayerBehaviour : MonoBehaviour {
     private State _state;
 
     public bool isFacingRight;
+
+    private ScrollingManager _scrollingManager;
 
     public enum State
     {
@@ -41,6 +43,8 @@ public class PlayerBehaviour : MonoBehaviour {
         _left = -transform.right;
 
         isFacingRight = true;
+
+        _scrollingManager = GetComponentInParent<ScrollingManager>();
     }
 
     void Movement()
@@ -90,11 +94,13 @@ public class PlayerBehaviour : MonoBehaviour {
 
     public void OnRelease()
     {
+        _scrollingManager.enabled = true;
         _state = State.Idle;
     }
 
     public void OnTrigger(int indexEnemy)
     {
+        _scrollingManager.enabled = false;
         _textBoxManager.talkTriggered(indexEnemy);
         _state = State.Talking;
     }

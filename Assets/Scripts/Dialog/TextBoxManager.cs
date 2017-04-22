@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 public class TextBoxManager : MonoBehaviour {
 
@@ -12,7 +13,7 @@ public class TextBoxManager : MonoBehaviour {
     public string[] textLines;
 
     public int currentLine;
-    public int endAtLine;
+    protected int endAtLine;
 
     //public PlayerController player;
 
@@ -24,19 +25,19 @@ public class TextBoxManager : MonoBehaviour {
         {
             textLines = textFile.text.Split('\n');
         }
-
-        if (endAtLine == 0)
-        {
-            endAtLine = textLines.Length - 1;
-        }
+        endAtLine = textLines.Length;
     }
 
     private void Update()
     {
         theText.text = textLines[currentLine];
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-
+            currentLine++;
+            if (currentLine == endAtLine)
+            {
+                textBox.SetActive(false);
+            }
         }
     }
 }

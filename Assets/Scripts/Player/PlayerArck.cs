@@ -12,8 +12,8 @@ public class PlayerArck : MonoBehaviour
     bool nearNPC, nearHideout, dialogOn;
     [SerializeField]
     TextBoxManager dialog;
-    /*[SerializeField]
-    Hideout hideout;*/
+    [SerializeField]
+    HideoutBehaviour hideout;
 
     public enum State
     {
@@ -120,7 +120,7 @@ public class PlayerArck : MonoBehaviour
     void Hide()
     {
         Debug.Log("Bah là on cache tu vois");
-        //hideout.OnHide();
+        hideout.OnHide();
         GetComponent<SpriteRenderer>().enabled = false;
         state = State.Hidding;
     }
@@ -128,7 +128,7 @@ public class PlayerArck : MonoBehaviour
     void Unhide()
     {
         Debug.Log("Bah là on décache tu vois");
-        //hideout.OnUnhide();
+        hideout.OnUnhide();
         GetComponent<SpriteRenderer>().enabled = true;
         state = State.Idle;
     }

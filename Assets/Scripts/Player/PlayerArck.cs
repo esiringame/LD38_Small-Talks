@@ -10,6 +10,10 @@ namespace Player1
         [SerializeField]
         float horSpeed, verSpeed;
         Vector3 Up, Down, Right, Left;
+        [SerializeField]
+        bool nearNPC, nearHideout,dialogOn;
+        [SerializeField]
+        TextBoxManager dialog;
 
         private enum State
         {
@@ -69,7 +73,55 @@ namespace Player1
         }
         void Action()
         {
+            if (Input.GetButtonDown("Action"))
+            {
+                if (state == State.Idle || state == State.Walking)
+                {
+                    if (nearHideout)
+                    {
+                        Hide();
+                    }
+                    else if (nearNPC)
+                    {
+                        dialogOn = true;
+                        Talk();
+                    }
+                }
+                else if (state == State.Hidding)
+                {
+                    Unhide();
+                }
+                else
+                {
+                    Talk();
+                }
+            }
+        }
 
+        void Talk()
+        {
+            if (dialogOn)//dialog.isOn())
+            {
+                Debug.Log("Bah là on parle tu vois");
+                state = State.Talking;
+            }
+            else
+            {
+                Debug.Log("Bah là on parle pas tu vois");
+                state = State.Idle;
+            }
+        }
+
+        void Hide()
+        {
+            Debug.Log("Bah là on cache tu vois");
+            state = State.Hidding;
+        }
+
+        void Unhide()
+        {
+            Debug.Log("Bah là on décache tu vois");
+            state = State.Idle;
         }
 
         // Update is called once per frame

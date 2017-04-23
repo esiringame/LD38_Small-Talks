@@ -10,6 +10,8 @@ public class PlayerAnimatorController : MonoBehaviour {
     SpriteRenderer _renderer;
 
 
+
+
 	// Use this for initialization
 	void Start () {
         _player = transform.GetComponent<PlayerBehaviour>();

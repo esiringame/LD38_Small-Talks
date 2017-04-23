@@ -1,20 +1,20 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-public class PedestrianFactory : FactoryBase
+public class RoadFactory : FactoryBase
 {
     public GameObject[] Prefabs;
 
-    public PedestrianFactory()
+    public RoadFactory()
     {
-        SpawnDelayMin = 0.5f;
     }
 
     protected override GameObject LocalInstantiate()
     {
-        return Instantiate(Prefabs[0]);
+        return Instantiate(Prefabs[Prefabs.Length]); // TODO index random modulo length
     }
 
     protected override void OnObjectDestroy(GameObject obj)
     {
     }
 }
+

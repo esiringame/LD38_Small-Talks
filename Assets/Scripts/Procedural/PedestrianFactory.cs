@@ -25,11 +25,11 @@ public class PedestrianFactory : FactoryBase
         _inventory = new List<PedestrianDescriptor>();
         for (int i = 0; i < CharacterPrefabs.Length; i++)
         {
-            _inventory[i] = new PedestrianDescriptor
+            _inventory.Add(new PedestrianDescriptor
             {
-                CharacterId = i,
+                CharacterId = i + 1,
                 EncounterCounter = 0
-            };
+            });
         }
 
         for (int i = 0; i < GenericCount; i++)

@@ -1,27 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerBehaviour : MonoBehaviour {
-
-    [SerializeField]
-    private TextBoxManager _textBoxManager;
-
-    [SerializeField]
-    float _horSpeed, _verSpeed;
-    Vector3 _up, _down, _right, _left;
-    [SerializeField]
-    bool _nearNPC, _nearHideout;
- 
-    [SerializeField]
-    TrashcanAnimatorController _hideout;
-    [SerializeField]
-    private State _state;
-
-    public bool isFacingRight;
-
-    private ScrollingManager _scrollingManager;
-
+public class PlayerBehaviour : MonoBehaviour
+{
     public enum State
     {
         Idle,
@@ -30,55 +10,67 @@ public class PlayerBehaviour : MonoBehaviour {
         Talking
     }
 
+    public TextBoxManager _textBoxManager;
+    public PrefabFactory HideoutFactory;
+    public float _horSpeed, _verSpeed;
+    public float HideoutDistanceMax = .3f;
+    private State _state;
+    private bool isFacingRight;
+    private ScrollingManager _scrollingManager;
+    private TrashcanAnimatorController _hideout;
+    private Rigidbody2D _rigidbody;
+    
     public State GetState()
     {
         return _state;
     }
+
+    public bool GetIsFacingRight()
+    {
+        return isFacingRight;
+    }
+
     // Use this for initialization
     void Start () {
         _state = State.Idle;
-        _up = transform.up;
-        _down = -transform.up;
-        _right = transform.right;
-        _left = -transform.right;
 
         isFacingRight = true;
 
         _scrollingManager = GetComponentInParent<ScrollingManager>();
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     void Movement()
     {
         if (_state == State.Idle || _state == State.Walking)
         {
-            Vector3 move = Vector3.zero;
+            Vector3 move = Vector2.zero;
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
             isFacingRight = horizontal >= 0;
             if (vertical > 0)
             {
-                move += _up;
+                move += transform.up;
             }
             else if (vertical < 0)
             {
-                move += _down;
+                move += -transform.up;
             }
             if (horizontal > 0)
             {
-                move += _right;
+                move += transform.right;
                  
             }
             else if (horizontal < 0)
             {
-                move += _left;
+                move += -transform.right;
             }
             if (move != Vector3.zero)
             {
                 _state = State.Walking;
-                move = move.normalized;
-                move.Scale(new Vector3(_horSpeed, _verSpeed, 1) * Time.deltaTime);
-                GetComponent<Rigidbody2D>().MovePosition(transform.position + move);
-                //transform.position += move;
+                Vector2 move2D = move.normalized;
+                move2D.Scale(new Vector3(_horSpeed, _verSpeed) * Time.deltaTime);
+                _rigidbody.MovePosition(_rigidbody.position + move2D);
             }
             else
             {
@@ -112,10 +104,7 @@ public class PlayerBehaviour : MonoBehaviour {
         {
             if (_state == State.Idle || _state == State.Walking)
             {
-                if (_nearHideout)
-                {
-                    Hide();
-                }
+                Hide();
             }
             else if (_state == State.Hidding)
             {
@@ -126,39 +115,40 @@ public class PlayerBehaviour : MonoBehaviour {
 
     void Hide()
     {
-        Debug.Log("Bah là on cache tu vois");
-        _hideout.OnHide();
+        TrashcanAnimatorController trashCan = null;
+        float distance = float.PositiveInfinity;
+        foreach (GameObject hideoutObject in HideoutFactory.AliveObjects)
+        {
+            float dist = (hideoutObject.transform.position - transform.position).magnitude;
+
+            if (dist > HideoutDistanceMax)
+                continue;
+
+            if (dist < distance)
+            {
+                distance = dist;
+                trashCan = hideoutObject.GetComponent<TrashcanAnimatorController>();
+            }
+        }
+
+        if (trashCan == null)
+            return;
+        _hideout = trashCan;
+
+        _hideout.OnHide(this);
         GetComponent<SpriteRenderer>().enabled = false;
         _state = State.Hidding;
     }
 
     void Unhide()
     {
-        Debug.Log("Bah là on décache tu vois");
         _hideout.OnUnhide();
         GetComponent<SpriteRenderer>().enabled = true;
         _state = State.Idle;
     }
 
-    float Distance(Transform a, Transform b)
+    public void ForceUnhide()
     {
-        return 0;
+        Unhide();
     }
-
-    GameObject GetNearestNeighbour(IEnumerable<GameObject> list)
-    {
-        GameObject result=null;
-        float distance = float.PositiveInfinity;
-        foreach(GameObject go in list)
-        {
-            float dist = Distance(go.transform, transform);
-            if(dist<=distance)
-            {
-                distance = dist;
-                result = go;
-            }
-        }
-        return result;
-    }
-
 }

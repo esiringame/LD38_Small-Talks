@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCBehaviour : MonoBehaviour {
-
-    public bool DoesHeKnowUPR = true;
+public class NPCBehaviour : MonoBehaviour
+{
     public Vector3 Direction = Vector3.left;
     public float WalkingSpeed = 0.8f;
     public float MaxSpeed = 99.99f;
@@ -19,6 +18,7 @@ public class NPCBehaviour : MonoBehaviour {
     private Transform _playerTransform;
     public int _indexNPC;
     private State _stateNPC;
+    private bool isFacingRight;
 
     public enum State
     {
@@ -33,6 +33,13 @@ public class NPCBehaviour : MonoBehaviour {
     {
         return _stateNPC;
     }
+
+    public bool GetIsFacingRight()
+    {
+        return isFacingRight;
+    }
+
+    public PedestrianDescriptor Descriptor { get; set; }
 
     // Use this for initialization
     void Start () {
@@ -53,7 +60,7 @@ public class NPCBehaviour : MonoBehaviour {
         {
             _stateNPC = State.walking;
         }
-        else if (playerDistance < TriggerDistance && _stateNPC == State.walking && DoesHeKnowUPR)
+        else if (playerDistance < TriggerDistance && _stateNPC == State.walking && Descriptor.KnowPlayer)
         {
             _stateNPC = State.triggered;
         }
@@ -82,12 +89,15 @@ public class NPCBehaviour : MonoBehaviour {
         if (_walkingSpeed > MaxSpeed)
             _walkingSpeed = MaxSpeed;
 
+        isFacingRight = oneDirection.x > 0;
+
         transform.localPosition += oneDirection * _walkingSpeed * Time.deltaTime;
     }
 
     void Walking()
     {
         transform.localPosition += Direction * WalkingSpeed * Time.deltaTime;
+        isFacingRight = false;
     }
 
     void Caught()

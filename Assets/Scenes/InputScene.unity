@@ -244,30 +244,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &832083633 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1628263139833500, guid: ac4939b6dcd17da419723413caf45592,
-    type: 2}
-  m_PrefabInternal: {fileID: 296748996}
 --- !u!114 &832083635 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114718762332473240, guid: ac4939b6dcd17da419723413caf45592,
     type: 2}
   m_PrefabInternal: {fileID: 296748996}
   m_Script: {fileID: 11500000, guid: eab4117990b81314e961d8dcdc13716d, type: 3}
---- !u!114 &832083639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 832083633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3713a473f5ec26f47aa88fc79241e2cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FullSprite: {fileID: 21300002, guid: 1782322d3ed56fc45b460e20a69203d3, type: 3}
-  EmptySprite: {fileID: 21300000, guid: 1782322d3ed56fc45b460e20a69203d3, type: 3}
 --- !u!1001 &1854492459
 Prefab:
   m_ObjectHideFlags: 0
@@ -321,6 +303,26 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114670798712177718, guid: a72f932d2c1d5c64db1b524baca251cb,
+        type: 2}
+      propertyPath: _horSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114670798712177718, guid: a72f932d2c1d5c64db1b524baca251cb,
+        type: 2}
+      propertyPath: _verSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114670798712177718, guid: a72f932d2c1d5c64db1b524baca251cb,
+        type: 2}
+      propertyPath: _hideout
+      value: 
+      objectReference: {fileID: 832083635}
+    - target: {fileID: 114670798712177718, guid: a72f932d2c1d5c64db1b524baca251cb,
+        type: 2}
+      propertyPath: _nearHideout
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a72f932d2c1d5c64db1b524baca251cb, type: 2}

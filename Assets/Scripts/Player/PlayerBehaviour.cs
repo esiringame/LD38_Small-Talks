@@ -77,7 +77,8 @@ public class PlayerBehaviour : MonoBehaviour {
                 _state = State.Walking;
                 move = move.normalized;
                 move.Scale(new Vector3(_horSpeed, _verSpeed, 1) * Time.deltaTime);
-                transform.position += move;
+                GetComponent<Rigidbody2D>().MovePosition(transform.position + move);
+                //transform.position += move;
             }
             else
             {

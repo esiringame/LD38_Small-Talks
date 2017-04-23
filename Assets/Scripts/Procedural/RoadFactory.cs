@@ -29,13 +29,11 @@ public class RoadFactory : FactoryScenery
             _rectifiedProbabilityWeight[i] += cum;
             cum = _rectifiedProbabilityWeight[i];
         }
-        Debug.Log("Cum: " + cum);
     }
 
     protected override GameObject LocalInstantiate()
     {
         double rng = Random.value;
-        Debug.Log("Rng: " + rng);
         for (int i = 0; i < Prefabs.Length; i++)
             if (_rectifiedProbabilityWeight[i] > rng)
                 return Instantiate(Prefabs[i]);

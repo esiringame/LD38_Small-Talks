@@ -15,6 +15,6 @@ public class Depth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        _transform.localPosition = new Vector3(_transform.localPosition.x, _transform.localPosition.y, _transform.localPosition.y * 1 + 20);
+        _transform.localPosition = new Vector3(_transform.localPosition.x, _transform.localPosition.y, _transform.localPosition.y * 1);
 	}
 }

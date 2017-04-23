@@ -616,6 +616,11 @@ Prefab:
       propertyPath: LifeZone
       value: 
       objectReference: {fileID: 654940217}
+    - target: {fileID: 114876326897399090, guid: 4b026839a9c0e4808bff235830ab38d8,
+        type: 2}
+      propertyPath: LifeZone
+      value: 
+      objectReference: {fileID: 654940217}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b026839a9c0e4808bff235830ab38d8, type: 2}
   m_IsPrefabParent: 0

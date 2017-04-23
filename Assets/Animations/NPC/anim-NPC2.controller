@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: anim-NPC1
+  m_Name: anim-NPC2
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: isWalking
@@ -100,7 +100,7 @@ AnimatorState:
   m_SpeedParameterActive: 1
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5d074be792dde514d94b4377e81333dc, type: 2}
+  m_Motion: {fileID: 7400000, guid: 35006ae7897f8ce43bb409a855864460, type: 2}
   m_Tag: 
   m_SpeedParameter: speed
   m_MirrorParameter: 
@@ -124,7 +124,7 @@ AnimatorState:
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 87ed9448327c82d44967c7827f2bf5c5, type: 2}
+  m_Motion: {fileID: 7400000, guid: fefca764a17c92c48bb63ecc497fcb29, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

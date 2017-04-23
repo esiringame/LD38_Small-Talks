@@ -13,8 +13,8 @@ public class SceneryEngine : MonoBehaviour
         _factories = GetComponents<FactoryScenery>();
 	    _scrollingManager = GetComponentInParent<ScrollingManager>();
 
-        foreach(FactoryScenery f in _factories) 
-            Spawn(f);
+        //foreach(FactoryScenery f in _factories) 
+        //    Spawn(f);
     }
 
     public void Update()

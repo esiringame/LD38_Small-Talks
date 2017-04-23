@@ -19,6 +19,7 @@ public abstract class FactoryScenery : MonoBehaviour
     protected FactoryScenery()
     {
         AliveObjects = _aliveObjects.AsReadOnly();
+        LastTileSize = .0f;
     }
 
     public void Update()

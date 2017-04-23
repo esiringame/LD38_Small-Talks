@@ -588,9 +588,25 @@ Prefab:
       value: 
       objectReference: {fileID: 1088714227842636, guid: 1d5a20315a68348ff8c9a2ba6db44a35,
         type: 2}
+    - target: {fileID: 224375903441720944, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 224375903441720944, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 1.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b269cc4f1acf6ab40892ee902e7447d2, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1150378849 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114098420086866384, guid: b269cc4f1acf6ab40892ee902e7447d2,
+    type: 2}
+  m_PrefabInternal: {fileID: 599627079}
+  m_Script: {fileID: 11500000, guid: 9a0d6db236564e17afdd43092f365602, type: 3}
 --- !u!114 &1418776615 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114670798712177718, guid: a72f932d2c1d5c64db1b524baca251cb,
@@ -739,6 +755,11 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114670798712177718, guid: a72f932d2c1d5c64db1b524baca251cb,
+        type: 2}
+      propertyPath: HideoutFactory
+      value: 
+      objectReference: {fileID: 1150378849}
     m_RemovedComponents:
     - {fileID: 61243629299839416, guid: a72f932d2c1d5c64db1b524baca251cb, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a72f932d2c1d5c64db1b524baca251cb, type: 2}

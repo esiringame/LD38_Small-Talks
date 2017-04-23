@@ -1,27 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerBehaviour : MonoBehaviour {
-
-    [SerializeField]
-    private TextBoxManager _textBoxManager;
-
-    [SerializeField]
-    float _horSpeed, _verSpeed;
-    [SerializeField]
-    bool _nearNPC, _nearHideout;
- 
-    [SerializeField]
-    TrashcanAnimatorController _hideout;
-    [SerializeField]
-    private State _state;
-
-    public bool isFacingRight;
-
-    private ScrollingManager _scrollingManager;
-    private Rigidbody2D _rigidbody;
-
+public class PlayerBehaviour : MonoBehaviour
+{
     public enum State
     {
         Idle,
@@ -30,10 +10,26 @@ public class PlayerBehaviour : MonoBehaviour {
         Talking
     }
 
+    public TextBoxManager _textBoxManager;
+    public PrefabFactory HideoutFactory;
+    public float _horSpeed, _verSpeed;
+    public float HideoutDistanceMax = .3f;
+    private State _state;
+    private bool isFacingRight;
+    private ScrollingManager _scrollingManager;
+    private TrashcanAnimatorController _hideout;
+    private Rigidbody2D _rigidbody;
+    
     public State GetState()
     {
         return _state;
     }
+
+    public bool GetIsFacingRight()
+    {
+        return isFacingRight;
+    }
+
     // Use this for initialization
     void Start () {
         _state = State.Idle;
@@ -108,10 +104,7 @@ public class PlayerBehaviour : MonoBehaviour {
         {
             if (_state == State.Idle || _state == State.Walking)
             {
-                if (_nearHideout)
-                {
-                    Hide();
-                }
+                Hide();
             }
             else if (_state == State.Hidding)
             {
@@ -122,39 +115,40 @@ public class PlayerBehaviour : MonoBehaviour {
 
     void Hide()
     {
-        Debug.Log("Bah là on cache tu vois");
-        _hideout.OnHide();
+        TrashcanAnimatorController trashCan = null;
+        float distance = float.PositiveInfinity;
+        foreach (GameObject hideoutObject in HideoutFactory.AliveObjects)
+        {
+            float dist = (hideoutObject.transform.position - transform.position).magnitude;
+
+            if (dist > HideoutDistanceMax)
+                continue;
+
+            if (dist < distance)
+            {
+                distance = dist;
+                trashCan = hideoutObject.GetComponent<TrashcanAnimatorController>();
+            }
+        }
+
+        if (trashCan == null)
+            return;
+        _hideout = trashCan;
+
+        _hideout.OnHide(this);
         GetComponent<SpriteRenderer>().enabled = false;
         _state = State.Hidding;
     }
 
     void Unhide()
     {
-        Debug.Log("Bah là on décache tu vois");
         _hideout.OnUnhide();
         GetComponent<SpriteRenderer>().enabled = true;
         _state = State.Idle;
     }
 
-    float Distance(Transform a, Transform b)
+    public void ForceUnhide()
     {
-        return 0;
+        Unhide();
     }
-
-    GameObject GetNearestNeighbour(IEnumerable<GameObject> list)
-    {
-        GameObject result=null;
-        float distance = float.PositiveInfinity;
-        foreach(GameObject go in list)
-        {
-            float dist = Distance(go.transform, transform);
-            if(dist<=distance)
-            {
-                distance = dist;
-                result = go;
-            }
-        }
-        return result;
-    }
-
 }

@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrashcanAnimatorController : MonoBehaviour {
-
+public class TrashcanAnimatorController : MonoBehaviour
+{
     Animator _animator;
     public bool IsEmpty = true;
+    private PlayerBehaviour _player;
 
 	// Use this for initialization
 	void Start () {
@@ -17,26 +18,21 @@ public class TrashcanAnimatorController : MonoBehaviour {
         _animator.SetBool("isEmpty", IsEmpty);
 	}
 
-    private void Fill()
+    public void OnHide(PlayerBehaviour player)
     {
         IsEmpty = false;
-        Debug.Log("Ou pas faut voir");
-    }
-
-    private void Empty()
-    {
-        IsEmpty = true;
-    }
-
-    public void OnHide()
-    {
-        Debug.Log("C'est caché");
-        Fill();
+        _player = player;
     }
 
     public void OnUnhide()
     {
-        Empty();
+        IsEmpty = true;
+        _player = null;
     }
 
+    private void OnDestroy()
+    {
+        if (_player != null)
+            _player.ForceUnhide();
+    }
 }

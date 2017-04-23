@@ -18,6 +18,7 @@ public class NPCBehaviour : MonoBehaviour
     private Transform _playerTransform;
     public int _indexNPC;
     private State _stateNPC;
+    private bool isFacingRight;
 
     public enum State
     {
@@ -31,6 +32,11 @@ public class NPCBehaviour : MonoBehaviour
     public State GetState()
     {
         return _stateNPC;
+    }
+
+    public bool GetIsFacingRight()
+    {
+        return isFacingRight;
     }
 
     public PedestrianDescriptor Descriptor { get; set; }
@@ -83,12 +89,15 @@ public class NPCBehaviour : MonoBehaviour
         if (_walkingSpeed > MaxSpeed)
             _walkingSpeed = MaxSpeed;
 
+        isFacingRight = oneDirection.x > 0;
+
         transform.localPosition += oneDirection * _walkingSpeed * Time.deltaTime;
     }
 
     void Walking()
     {
         transform.localPosition += Direction * WalkingSpeed * Time.deltaTime;
+        isFacingRight = false;
     }
 
     void Caught()

@@ -20,7 +20,7 @@ public class PlayerAnimatorController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        _renderer.flipX = !_player.isFacingRight;
+        _renderer.flipX = !_player.GetIsFacingRight();
 		if(_player.GetState() == PlayerBehaviour.State.Walking)
         {
             _animator.SetBool("isWalking", true);

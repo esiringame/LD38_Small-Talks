@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 07d750462b1fa904b97a29b30f9f581d
-timeCreated: 1492971230
+timeCreated: 1492971588
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -94,7 +94,7 @@ TextureImporter:
         y: 240
         width: 90
         height: 30
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -107,7 +107,7 @@ TextureImporter:
         y: 210
         width: 90
         height: 30
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -120,7 +120,7 @@ TextureImporter:
         y: 180
         width: 90
         height: 30
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -133,7 +133,7 @@ TextureImporter:
         y: 150
         width: 90
         height: 30
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -146,7 +146,7 @@ TextureImporter:
         y: 120
         width: 90
         height: 30
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -159,7 +159,7 @@ TextureImporter:
         y: 90
         width: 90
         height: 30
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -172,7 +172,7 @@ TextureImporter:
         y: 60
         width: 90
         height: 30
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -185,7 +185,7 @@ TextureImporter:
         y: 30
         width: 90
         height: 30
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -198,7 +198,7 @@ TextureImporter:
         y: 0
         width: 90
         height: 30
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []

@@ -13,6 +13,8 @@ public abstract class FactoryScenery : MonoBehaviour
 
     public ReadOnlyCollection<GameObject> AliveObjects { get; private set; }
 
+    public float LastTileSize { get; private set;}
+    public float ScrollSize { get; set;}
 
     protected FactoryScenery()
     {
@@ -47,6 +49,8 @@ public abstract class FactoryScenery : MonoBehaviour
     {
         GameObject spawned = LocalInstantiate();
         _spawnedObjects.Add(spawned);
+
+        LastTileSize = spawned.GetComponent<SpriteRenderer>().bounds.size.x;
         return spawned;
     }
 

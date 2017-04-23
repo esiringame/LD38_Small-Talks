@@ -9,7 +9,6 @@ public class PlayerBehaviour : MonoBehaviour {
 
     [SerializeField]
     float _horSpeed, _verSpeed;
-    Vector3 _up, _down, _right, _left;
     [SerializeField]
     bool _nearNPC, _nearHideout;
  
@@ -21,6 +20,7 @@ public class PlayerBehaviour : MonoBehaviour {
     public bool isFacingRight;
 
     private ScrollingManager _scrollingManager;
+    private Rigidbody2D _rigidbody;
 
     public enum State
     {
@@ -37,48 +37,44 @@ public class PlayerBehaviour : MonoBehaviour {
     // Use this for initialization
     void Start () {
         _state = State.Idle;
-        _up = transform.up;
-        _down = -transform.up;
-        _right = transform.right;
-        _left = -transform.right;
 
         isFacingRight = true;
 
         _scrollingManager = GetComponentInParent<ScrollingManager>();
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     void Movement()
     {
         if (_state == State.Idle || _state == State.Walking)
         {
-            Vector3 move = Vector3.zero;
+            Vector3 move = Vector2.zero;
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
             isFacingRight = horizontal >= 0;
             if (vertical > 0)
             {
-                move += _up;
+                move += transform.up;
             }
             else if (vertical < 0)
             {
-                move += _down;
+                move += -transform.up;
             }
             if (horizontal > 0)
             {
-                move += _right;
+                move += transform.right;
                  
             }
             else if (horizontal < 0)
             {
-                move += _left;
+                move += -transform.right;
             }
             if (move != Vector3.zero)
             {
                 _state = State.Walking;
-                move = move.normalized;
-                move.Scale(new Vector3(_horSpeed, _verSpeed, 1) * Time.deltaTime);
-                GetComponent<Rigidbody2D>().MovePosition(transform.position + move);
-                //transform.position += move;
+                Vector2 move2D = move.normalized;
+                move2D.Scale(new Vector3(_horSpeed, _verSpeed) * Time.deltaTime);
+                _rigidbody.MovePosition(_rigidbody.position + move2D);
             }
             else
             {

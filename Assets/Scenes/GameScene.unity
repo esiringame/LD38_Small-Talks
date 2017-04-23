@@ -724,7 +724,8 @@ Prefab:
       propertyPath: _verSpeed
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 61243629299839416, guid: a72f932d2c1d5c64db1b524baca251cb, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a72f932d2c1d5c64db1b524baca251cb, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1723550372 stripped

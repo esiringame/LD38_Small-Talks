@@ -22,26 +22,26 @@ public class TextBoxManager : MonoBehaviour {
         gameObject.SetActive(false);
     }
 
-    public void talkTriggered(int enemyIndex)
+    public void talkTriggered(int CharacterId, int EncounterCounter)
     {
         gameObject.SetActive(true);
-
+        EncounterCounter++;
         StreamReader theReader;
-        if (enemyIndex == 1)
+        if (EncounterCounter > 3 && CharacterId > 0)
         {
-            theReader = new StreamReader("Assets/Naration/Quentin.txt", Encoding.Default);
+            theReader = new StreamReader("Assets/Naration/Random.txt", Encoding.Default);
             allTextInFile = theReader.ReadToEnd();
         }
-        else if (enemyIndex == 2)
+        else if (EncounterCounter <  3 && CharacterId > 0)
         {
-            theReader = new StreamReader("Assets/Naration/Fred.txt", Encoding.Default);
+            theReader = new StreamReader("Assets/Naration/"+ CharacterId.ToString() + EncounterCounter.ToString() + ".txt", Encoding.Default);
             allTextInFile = theReader.ReadToEnd();
         }
-        else
+        else 
         {
-            theReader = new StreamReader("Assets/Naration/Else.txt", Encoding.Default);
-            allTextInFile = theReader.ReadToEnd();
+            Debug.Log("CharacterId is wrong, 0 is for generic pedestrian");
         }
+        
         if (allTextInFile != null)
         {
             currentLine = 0;

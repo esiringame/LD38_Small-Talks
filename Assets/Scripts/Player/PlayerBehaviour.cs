@@ -91,10 +91,10 @@ public class PlayerBehaviour : MonoBehaviour
         _state = State.Idle;
     }
 
-    public void OnTrigger(int indexEnemy)
+    public void OnTrigger(int CharacterId, int EncounterCounter)
     {
         _scrollingManager.enabled = false;
-        _textBoxManager.talkTriggered(indexEnemy);
+        _textBoxManager.talkTriggered(CharacterId, EncounterCounter);
         _state = State.Talking;
     }
 

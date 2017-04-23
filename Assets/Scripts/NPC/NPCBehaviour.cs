@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCBehaviour : MonoBehaviour {
-
-    public bool DoesHeKnowUPR = true;
+public class NPCBehaviour : MonoBehaviour
+{
     public Vector3 Direction = Vector3.left;
     public float WalkingSpeed = 0.8f;
     public float MaxSpeed = 99.99f;
@@ -34,6 +33,8 @@ public class NPCBehaviour : MonoBehaviour {
         return _stateNPC;
     }
 
+    public PedestrianDescriptor Descriptor { get; set; }
+
     // Use this for initialization
     void Start () {
         _player = GameObject.FindWithTag("Player");
@@ -53,7 +54,7 @@ public class NPCBehaviour : MonoBehaviour {
         {
             _stateNPC = State.walking;
         }
-        else if (playerDistance < TriggerDistance && _stateNPC == State.walking && DoesHeKnowUPR)
+        else if (playerDistance < TriggerDistance && _stateNPC == State.walking && Descriptor.KnowPlayer)
         {
             _stateNPC = State.triggered;
         }

@@ -59,7 +59,7 @@ public class NPCBehaviour : MonoBehaviour
         {
             _stateNPC = State.walking;
         }
-        else if (playerDistance < TriggerDistance && _stateNPC == State.walking && Descriptor.KnowPlayer)
+        else if (playerDistance < TriggerDistance && _stateNPC == State.walking && Descriptor.KnowPlayer && _player.GetComponent<PlayerBehaviour>().GetState() != PlayerBehaviour.State.Hidding)
         {
             _stateNPC = State.triggered;
         }
@@ -101,8 +101,8 @@ public class NPCBehaviour : MonoBehaviour
 
     void Caught()
     {
-        Descriptor.EncounterCounter++;
         _player.GetComponent<PlayerBehaviour>().OnTrigger(Descriptor.CharacterId, Descriptor.EncounterCounter);
+        Descriptor.EncounterCounter++;
     }
 
 

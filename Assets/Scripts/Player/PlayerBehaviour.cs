@@ -139,4 +139,25 @@ public class PlayerBehaviour : MonoBehaviour {
         _state = State.Idle;
     }
 
+    float Distance(Transform a, Transform b)
+    {
+        return 0;
+    }
+
+    GameObject GetNearestNeighbour(IEnumerable<GameObject> list)
+    {
+        GameObject result=null;
+        float distance = float.PositiveInfinity;
+        foreach(GameObject go in list)
+        {
+            float dist = Distance(go.transform, transform);
+            if(dist<=distance)
+            {
+                distance = dist;
+                result = go;
+            }
+        }
+        return result;
+    }
+
 }

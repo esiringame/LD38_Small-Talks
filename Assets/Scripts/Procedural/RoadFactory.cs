@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RoadFactory : FactoryBase
+public class RoadFactory : FactoryScenery
 {
     public GameObject[] Prefabs;
 
@@ -10,7 +10,7 @@ public class RoadFactory : FactoryBase
 
     protected override GameObject LocalInstantiate()
     {
-        return Instantiate(Prefabs[Prefabs.Length]); // TODO index random modulo length
+        return Instantiate(Prefabs[Prefabs.Length-1]); // TODO index random modulo length
     }
 
     protected override void OnObjectDestroy(GameObject obj)

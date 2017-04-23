@@ -324,6 +324,7 @@ MonoBehaviour:
   - {fileID: 1197556307360426, guid: 525ba2bfff73747b3bcc8b7458821387, type: 2}
   - {fileID: 1429059673074086, guid: 274937e319e9f43e1893d804d4b0aadb, type: 2}
   - {fileID: 1549863672453296, guid: 10831e65d948a4ded946acf987502708, type: 2}
+  ProbabilityWeight: 
 --- !u!1 &222950773
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,6 +429,7 @@ GameObject:
   - component: {fileID: 468105185}
   - component: {fileID: 468105187}
   - component: {fileID: 468105186}
+  - component: {fileID: 468105188}
   m_Layer: 0
   m_Name: SceneryEngine
   m_TagString: Untagged
@@ -446,6 +448,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 534625907}
+  - {fileID: 1757515790}
   m_Father: {fileID: 472089736}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -466,6 +469,7 @@ MonoBehaviour:
   - {fileID: 1197556307360426, guid: 525ba2bfff73747b3bcc8b7458821387, type: 2}
   - {fileID: 1429059673074086, guid: 274937e319e9f43e1893d804d4b0aadb, type: 2}
   - {fileID: 1549863672453296, guid: 10831e65d948a4ded946acf987502708, type: 2}
+  ProbabilityWeight: c80000004200000021000000
 --- !u!114 &468105187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,6 +481,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c03cdc4130774ba1ac298582f73adae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &468105188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 468105184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa1bcc5a4c994e1eb52a401921ccbc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LifeZone: {fileID: 703791876}
+  SpawnZone: {fileID: 1757515790}
+  Prefabs:
+  - {fileID: 1429059673074086, guid: 274937e319e9f43e1893d804d4b0aadb, type: 2}
+  ProbabilityWeight: 
 --- !u!1 &472089735
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,6 +858,41 @@ Transform:
   m_PrefabParentObject: {fileID: 4644249823353792, guid: a72f932d2c1d5c64db1b524baca251cb,
     type: 2}
   m_PrefabInternal: {fileID: 1723550371}
+--- !u!1 &1757515789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1842950546220902, guid: b269cc4f1acf6ab40892ee902e7447d2,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1757515790}
+  m_Layer: 0
+  m_Name: RoadSpawnZone (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1757515790
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 224375903441720944, guid: b269cc4f1acf6ab40892ee902e7447d2,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1757515789}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 468105185}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 2, y: -0.3}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2088764530
 GameObject:
   m_ObjectHideFlags: 0

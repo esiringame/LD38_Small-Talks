@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
-using UnityEditor;
 using System.Text;
 
 public class TextBoxManager : MonoBehaviour {

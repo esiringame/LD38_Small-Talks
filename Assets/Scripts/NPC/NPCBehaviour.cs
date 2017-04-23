@@ -55,17 +55,21 @@ public class NPCBehaviour : MonoBehaviour
         float playerDistance = heading.magnitude;
 
 
-        if (playerDistance > TriggerDistance && _stateNPC == State.triggered)
+        if (_stateNPC == State.triggered && playerDistance > TriggerDistance)
         {
             _stateNPC = State.walking;
         }
-        else if (playerDistance < TriggerDistance && _stateNPC == State.walking && Descriptor.KnowPlayer && _player.GetComponent<PlayerBehaviour>().GetState() != PlayerBehaviour.State.Hidding)
+        else if (_stateNPC == State.walking && playerDistance < TriggerDistance && Descriptor.KnowPlayer && _player.GetComponent<PlayerBehaviour>().GetState() != PlayerBehaviour.State.Hidding)
         {
             _stateNPC = State.triggered;
         }
-        else if (playerDistance < CatchDistance && _stateNPC == State.triggered)
+        else if (_stateNPC == State.triggered && playerDistance < CatchDistance && _player.GetComponent<PlayerBehaviour>().GetState() != PlayerBehaviour.State.Hidding)
         {
             _stateNPC = State.caught;
+        }
+        else if (_stateNPC == State.triggered && _player.GetComponent<PlayerBehaviour>().GetState() == PlayerBehaviour.State.Hidding)
+        {
+            _stateNPC = State.flee;
         }
         else if (_stateNPC == State.caught)
         {

@@ -5,24 +5,24 @@ using UnityEngine;
 public class NPCAnimatorController : MonoBehaviour {
 
 
-    NPC.State state;
-    Animator animator;
+    NPCBehaviour.State _state;
+    Animator _animator;
 	// Use this for initialization
 	void Start () {
-        state = GetComponent<NPC>().getState();
-        animator = GetComponent<Animator>();
+        _state = GetComponent<NPCBehaviour>().GetState();
+        _animator = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        state = GetComponent<NPC>().getState();
-        if (state == NPC.State.caught || state == NPC.State.idle)
+        _state = GetComponent<NPCBehaviour>().GetState();
+        if (_state == NPCBehaviour.State.caught || _state == NPCBehaviour.State.idle)
         {
-            animator.SetBool("isWalking", false);
+            _animator.SetBool("isWalking", false);
         }
         else
         {
-            animator.SetBool("isWalking", true);
+            _animator.SetBool("isWalking", true);
         }
     }
 }

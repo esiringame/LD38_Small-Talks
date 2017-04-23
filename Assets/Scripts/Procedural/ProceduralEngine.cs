@@ -5,6 +5,7 @@ using Random = UnityEngine.Random;
 
 public class ProceduralEngine : MonoBehaviour
 {
+    public PlayerBehaviour PlayerBehaviour;
     public float SpawnDelayMin = 0.5f;
     public float SpawnDelayMax = 3;
 
@@ -28,7 +29,7 @@ public class ProceduralEngine : MonoBehaviour
             if (factory != null)
             {
                 GameObject spawned = factory.Instantiate();
-                spawned.transform.parent = gameObject.transform;
+                spawned.transform.parent = factory.Root != null ? factory.Root.transform : gameObject.transform;
 
                 RectTransform spawnZone = factory.SpawnZone;
                 Rect rect = spawnZone.rect;
@@ -42,7 +43,7 @@ public class ProceduralEngine : MonoBehaviour
 
     private FactoryBase GetRandomFactory()
     {
-        FactoryBase[] availableFactories = _factories.Where(f => f.IsAvailable).ToArray();
+        FactoryBase[] availableFactories = _factories.Where(f => f.IsAvailable && (PlayerBehaviour.GetState() != PlayerBehaviour.State.Talking || f is PedestrianFactory)).ToArray();
         if (availableFactories.Length == 0)
             return null;
 

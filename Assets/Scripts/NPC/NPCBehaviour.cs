@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC : MonoBehaviour {
+public class NPCBehaviour : MonoBehaviour {
 
     public bool DoesHeKnowUPR = true;
     public Vector3 Direction = Vector3.left;
@@ -10,13 +10,12 @@ public class NPC : MonoBehaviour {
     public float MaxSpeed = 99.99f;
     public float Acceleration = .1f;
     private float _walkingSpeed;
-
+  
     private GameObject _player;
 
     public float TriggerDistance = 3.0f;
     public float CatchDistance = .2f;
 
-    private Transform _transform;
     private Transform _playerTransform;
     public int _indexNPC;
     private State _stateNPC;
@@ -30,7 +29,7 @@ public class NPC : MonoBehaviour {
         flee // ignore player (after dialog)
     };
 
-    public State getState()
+    public State GetState()
     {
         return _stateNPC;
     }
@@ -38,16 +37,15 @@ public class NPC : MonoBehaviour {
     // Use this for initialization
     void Start () {
         _player = GameObject.FindWithTag("Player");
-	    _transform = GetComponent<Transform>();
         _playerTransform = _player.GetComponent<Transform>();
         _stateNPC = State.walking;
         _walkingSpeed = WalkingSpeed;
 	}
 
-    void updateState()
+    void UpdateState()
     {
         // Player distance
-        Vector2 heading = _transform.position - _playerTransform.position;
+        Vector2 heading = transform.position - _playerTransform.position;
         float playerDistance = heading.magnitude;
 
 
@@ -67,16 +65,16 @@ public class NPC : MonoBehaviour {
         {
             _stateNPC = State.idle;
         }
-        else if ((_stateNPC == State.idle && _player.GetComponent<PlayerBehaviour>().GetState() != global::PlayerBehaviour.State.Talking) || (_stateNPC == State.triggered && _player.GetComponent<PlayerBehaviour>().GetState() == global::PlayerBehaviour.State.Talking))
+        else if ((_stateNPC == State.idle && _player.GetComponent<PlayerBehaviour>().GetState() != PlayerBehaviour.State.Talking) || (_stateNPC == State.triggered && _player.GetComponent<PlayerBehaviour>().GetState() == PlayerBehaviour.State.Talking))
         {
             _stateNPC = State.flee;
         }
     }
 
-    void triggered()
+    void Triggered()
     {
         // Player distance
-        Vector2 heading = _transform.position - _playerTransform.position;
+        Vector2 heading = transform.position - _playerTransform.position;
         float playerDistance = heading.magnitude;
         Vector3 oneDirection = -heading / playerDistance;
         _walkingSpeed += Acceleration * Time.deltaTime;
@@ -84,21 +82,21 @@ public class NPC : MonoBehaviour {
         if (_walkingSpeed > MaxSpeed)
             _walkingSpeed = MaxSpeed;
 
-        _transform.localPosition += oneDirection * _walkingSpeed * Time.deltaTime;
+        transform.localPosition += oneDirection * _walkingSpeed * Time.deltaTime;
     }
 
-    void walking()
+    void Walking()
     {
-        _transform.localPosition += Direction * WalkingSpeed * Time.deltaTime;
+        transform.localPosition += Direction * WalkingSpeed * Time.deltaTime;
     }
 
-    void caught()
+    void Caught()
     {
         _player.GetComponent<PlayerBehaviour>().OnTrigger(_indexNPC);
     }
 
 
-    void idle()
+    void Idle()
     {
         return;
     }
@@ -106,24 +104,24 @@ public class NPC : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        updateState();
+        UpdateState();
 
         switch (_stateNPC)
         {
             case State.walking:
-                walking();
+                Walking();
                 break;
             case State.triggered:
-                triggered();
+                Triggered();
                 break;
             case State.caught:
-                caught();
+                Caught();
                 break;
             case State.idle:
-                idle();
+                Idle();
                 break;
             case State.flee:
-                walking();
+                Walking();
                 break;
         } 
     }    

@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class TrashcanAnimatorController : MonoBehaviour {
 
-    Animator animator;
-    public bool isEmpty = true;
+    Animator _animator;
+    public bool IsEmpty = true;
 
 	// Use this for initialization
 	void Start () {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        animator.SetBool("isEmpty", isEmpty);
+        _animator.SetBool("isEmpty", IsEmpty);
 	}
 
     private void Fill()
     {
-        isEmpty = false;
+        IsEmpty = false;
         Debug.Log("Ou pas faut voir");
     }
 
     private void Empty()
     {
-        isEmpty = true;
+        IsEmpty = true;
     }
 
     public void OnHide()

@@ -3,20 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour {
-    
-    public GameObject TextBoxManager;
 
-  
     [SerializeField]
-    float horSpeed, verSpeed;
-    Vector3 Up, Down, Right, Left;
+    private TextBoxManager _textBoxManager;
+
     [SerializeField]
-    bool nearNPC, nearHideout, dialogOn;
+    float _horSpeed, _verSpeed;
+    Vector3 _up, _down, _right, _left;
+    [SerializeField]
+    bool _nearNPC, _nearHideout;
  
     [SerializeField]
-    TrashcanAnimatorController hideout;
+    TrashcanAnimatorController _hideout;
     [SerializeField]
-    private State state;
+    private State _state;
+
+    public bool isFacingRight;
+
+    private ScrollingManager _scrollingManager;
 
     public enum State
     {
@@ -28,50 +32,56 @@ public class PlayerBehaviour : MonoBehaviour {
 
     public State GetState()
     {
-        return state;
+        return _state;
     }
     // Use this for initialization
     void Start () {
-        state = State.Idle;
-        Up = transform.up;
-        Down = -transform.up;
-        Right = transform.right;
-        Left = -transform.right;
+        _state = State.Idle;
+        _up = transform.up;
+        _down = -transform.up;
+        _right = transform.right;
+        _left = -transform.right;
+
+        isFacingRight = true;
+
+        _scrollingManager = GetComponentInParent<ScrollingManager>();
     }
 
     void Movement()
     {
-        if (state == State.Idle || state == State.Walking)
+        if (_state == State.Idle || _state == State.Walking)
         {
             Vector3 move = Vector3.zero;
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
+            isFacingRight = horizontal >= 0;
             if (vertical > 0)
             {
-                move += Up;
+                move += _up;
             }
             else if (vertical < 0)
             {
-                move += Down;
+                move += _down;
             }
             if (horizontal > 0)
             {
-                move += Right;
+                move += _right;
+                 
             }
             else if (horizontal < 0)
             {
-                move += Left;
+                move += _left;
             }
             if (move != Vector3.zero)
             {
-                state = State.Walking;
+                _state = State.Walking;
                 move = move.normalized;
-                move.Scale(new Vector3(horSpeed, verSpeed, 1) * Time.deltaTime);
+                move.Scale(new Vector3(_horSpeed, _verSpeed, 1) * Time.deltaTime);
                 transform.position += move;
             }
             else
             {
-                state = State.Idle;
+                _state = State.Idle;
             }
         }
     }
@@ -84,38 +94,31 @@ public class PlayerBehaviour : MonoBehaviour {
 
     public void OnRelease()
     {
-        state = State.Idle;
+        _scrollingManager.enabled = true;
+        _state = State.Idle;
     }
 
     public void OnTrigger(int indexEnemy)
     {
-        TextBoxManager.GetComponent<TextBoxManager>().talkTriggered(indexEnemy);
-        state = State.Talking;
+        _scrollingManager.enabled = false;
+        _textBoxManager.talkTriggered(indexEnemy);
+        _state = State.Talking;
     }
 
     void Action()
     {
         if (Input.GetButtonDown("Action"))
         {
-            if (state == State.Idle || state == State.Walking)
+            if (_state == State.Idle || _state == State.Walking)
             {
-                if (nearHideout)
+                if (_nearHideout)
                 {
                     Hide();
                 }
-                else if (nearNPC)
-                {
-                    dialogOn = true;
-                    OnTrigger(1);
-                }
             }
-            else if (state == State.Hidding)
+            else if (_state == State.Hidding)
             {
                 Unhide();
-            }
-            else
-            {
-                OnTrigger(1);
             }
         }
     }
@@ -123,17 +126,17 @@ public class PlayerBehaviour : MonoBehaviour {
     void Hide()
     {
         Debug.Log("Bah là on cache tu vois");
-        hideout.OnHide();
+        _hideout.OnHide();
         GetComponent<SpriteRenderer>().enabled = false;
-        state = State.Hidding;
+        _state = State.Hidding;
     }
 
     void Unhide()
     {
         Debug.Log("Bah là on décache tu vois");
-        hideout.OnUnhide();
+        _hideout.OnUnhide();
         GetComponent<SpriteRenderer>().enabled = true;
-        state = State.Idle;
+        _state = State.Idle;
     }
 
 }

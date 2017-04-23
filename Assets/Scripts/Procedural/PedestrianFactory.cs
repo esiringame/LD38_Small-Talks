@@ -2,6 +2,8 @@
 
 public class PedestrianFactory : FactoryBase
 {
+    public GameObject[] Prefabs;
+
     public PedestrianFactory()
     {
         SpawnDelayMin = 0.5f;
@@ -9,14 +11,10 @@ public class PedestrianFactory : FactoryBase
 
     protected override GameObject LocalInstantiate()
     {
-        var pedestrian = new GameObject();
-        pedestrian.AddComponent<SpriteRenderer>();
-        pedestrian.AddComponent<Scrollable>();
-        return pedestrian;
+        return Instantiate(Prefabs[0]);
     }
 
     protected override void OnObjectDestroy(GameObject obj)
     {
-
     }
 }

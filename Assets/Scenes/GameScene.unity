@@ -213,6 +213,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3cc0ca47a762dc428e9429522b11c84, type: 2}
   m_IsPrefabParent: 0
+--- !u!224 &116135876 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224763764353877534, guid: 4b026839a9c0e4808bff235830ab38d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1211645258}
 --- !u!1001 &315217738
 Prefab:
   m_ObjectHideFlags: 0
@@ -466,6 +471,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 0.5
+--- !u!1 &542076330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1975231703898012, guid: 4b026839a9c0e4808bff235830ab38d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 542076331}
+  m_Layer: 0
+  m_Name: RoadSpawnZone (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &542076331
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 224763764353877534, guid: 4b026839a9c0e4808bff235830ab38d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 542076330}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 547171930}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 2, y: -0.4}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &547171930 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4523317822004850, guid: 4b026839a9c0e4808bff235830ab38d8,
@@ -552,6 +592,25 @@ Prefab:
       propertyPath: GenericCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114453686807072662, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112757089768956, guid: b269cc4f1acf6ab40892ee902e7447d2, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114070650816144552, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114098420086866384, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b269cc4f1acf6ab40892ee902e7447d2, type: 2}
   m_IsPrefabParent: 0
@@ -584,7 +643,17 @@ Prefab:
       propertyPath: Prefabs.Array.size
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114876326897399090, guid: 4b026839a9c0e4808bff235830ab38d8,
+        type: 2}
+      propertyPath: Prefabs.Array.size
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 114824570224784178, guid: 4b026839a9c0e4808bff235830ab38d8,
+        type: 2}
+      propertyPath: ProbabilityWeight.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114876326897399090, guid: 4b026839a9c0e4808bff235830ab38d8,
         type: 2}
       propertyPath: ProbabilityWeight.Array.size
       value: 7
@@ -730,6 +799,98 @@ Prefab:
       propertyPath: ProbabilityWeight.Array.data[2]
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 114876326897399090, guid: 4b026839a9c0e4808bff235830ab38d8,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114876326897399090, guid: 4b026839a9c0e4808bff235830ab38d8,
+        type: 2}
+      propertyPath: Prefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1120256638819548, guid: 9fca478f0ac20ba4583d5199d25cc414,
+        type: 2}
+    - target: {fileID: 114876326897399090, guid: 4b026839a9c0e4808bff235830ab38d8,
+        type: 2}
+      propertyPath: Prefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 1631971605726038, guid: 6699e094aedf32c478d41f46db83ca81,
+        type: 2}
+    - target: {fileID: 114876326897399090, guid: 4b026839a9c0e4808bff235830ab38d8,
+        type: 2}
+      propertyPath: Prefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 1684624832220020, guid: 239fc8747be3ccf459a548a90688d2eb,
+        type: 2}
+    - target: {fileID: 114876326897399090, guid: 4b026839a9c0e4808bff235830ab38d8,
+        type: 2}
+      propertyPath: Prefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 1332802607903404, guid: a8630fe6c0726384c800d9bf659dae61,
+        type: 2}
+    - target: {fileID: 114876326897399090, guid: 4b026839a9c0e4808bff235830ab38d8,
+        type: 2}
+      propertyPath: Prefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 1690796703719460, guid: 5177cd246b49e254ba64cdcde33db7f0,
+        type: 2}
+    - target: {fileID: 114876326897399090, guid: 4b026839a9c0e4808bff235830ab38d8,
+        type: 2}
+      propertyPath: Prefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 1931254333007906, guid: 0dea4c4c8c4816c4588bde46c7354515,
+        type: 2}
+    - target: {fileID: 224763764353877534, guid: 4b026839a9c0e4808bff235830ab38d8,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114876326897399090, guid: 4b026839a9c0e4808bff235830ab38d8,
+        type: 2}
+      propertyPath: Prefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1328817091573276, guid: e7f55ea427b9f684dbda3f5c5bee6355,
+        type: 2}
+    - target: {fileID: 114876326897399090, guid: 4b026839a9c0e4808bff235830ab38d8,
+        type: 2}
+      propertyPath: ProbabilityWeight.Array.data[0]
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114876326897399090, guid: 4b026839a9c0e4808bff235830ab38d8,
+        type: 2}
+      propertyPath: ProbabilityWeight.Array.data[1]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114876326897399090, guid: 4b026839a9c0e4808bff235830ab38d8,
+        type: 2}
+      propertyPath: ProbabilityWeight.Array.data[2]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114876326897399090, guid: 4b026839a9c0e4808bff235830ab38d8,
+        type: 2}
+      propertyPath: ProbabilityWeight.Array.data[3]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114876326897399090, guid: 4b026839a9c0e4808bff235830ab38d8,
+        type: 2}
+      propertyPath: ProbabilityWeight.Array.data[4]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114876326897399090, guid: 4b026839a9c0e4808bff235830ab38d8,
+        type: 2}
+      propertyPath: ProbabilityWeight.Array.data[5]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114876326897399090, guid: 4b026839a9c0e4808bff235830ab38d8,
+        type: 2}
+      propertyPath: ProbabilityWeight.Array.data[6]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114876326897399090, guid: 4b026839a9c0e4808bff235830ab38d8,
+        type: 2}
+      propertyPath: SpawnZone
+      value: 
+      objectReference: {fileID: 116135876}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b026839a9c0e4808bff235830ab38d8, type: 2}
   m_IsPrefabParent: 0
@@ -953,6 +1114,33 @@ Transform:
   m_PrefabParentObject: {fileID: 4644249823353792, guid: a72f932d2c1d5c64db1b524baca251cb,
     type: 2}
   m_PrefabInternal: {fileID: 1723550371}
+--- !u!1 &1778442672 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1898386130483190, guid: 4b026839a9c0e4808bff235830ab38d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1211645258}
+--- !u!114 &1778442676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1778442672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa1bcc5a4c994e1eb52a401921ccbc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LifeZone: {fileID: 654940217}
+  SpawnZone: {fileID: 542076331}
+  Prefabs:
+  - {fileID: 1328817091573276, guid: e7f55ea427b9f684dbda3f5c5bee6355, type: 2}
+  - {fileID: 1120256638819548, guid: 9fca478f0ac20ba4583d5199d25cc414, type: 2}
+  - {fileID: 1631971605726038, guid: 6699e094aedf32c478d41f46db83ca81, type: 2}
+  - {fileID: 1684624832220020, guid: 239fc8747be3ccf459a548a90688d2eb, type: 2}
+  - {fileID: 1332802607903404, guid: a8630fe6c0726384c800d9bf659dae61, type: 2}
+  - {fileID: 1690796703719460, guid: 5177cd246b49e254ba64cdcde33db7f0, type: 2}
+  - {fileID: 1931254333007906, guid: 0dea4c4c8c4816c4588bde46c7354515, type: 2}
+  ProbabilityWeight: d0070000640000006400000064000000640000006400000064000000
 --- !u!1 &1810505079
 GameObject:
   m_ObjectHideFlags: 0

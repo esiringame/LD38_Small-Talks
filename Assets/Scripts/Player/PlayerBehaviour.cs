@@ -6,7 +6,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
     [SerializeField]
     private TextBoxManager _textBoxManager;
-  
+
     [SerializeField]
     float _horSpeed, _verSpeed;
     Vector3 _up, _down, _right, _left;
@@ -19,6 +19,8 @@ public class PlayerBehaviour : MonoBehaviour {
     private State _state;
 
     public bool isFacingRight;
+
+    private ScrollingManager _scrollingManager;
 
     public enum State
     {
@@ -41,6 +43,8 @@ public class PlayerBehaviour : MonoBehaviour {
         _left = -transform.right;
 
         isFacingRight = true;
+
+        _scrollingManager = GetComponentInParent<ScrollingManager>();
     }
 
     void Movement()
@@ -73,7 +77,8 @@ public class PlayerBehaviour : MonoBehaviour {
                 _state = State.Walking;
                 move = move.normalized;
                 move.Scale(new Vector3(_horSpeed, _verSpeed, 1) * Time.deltaTime);
-                transform.position += move;
+                GetComponent<Rigidbody2D>().MovePosition(transform.position + move);
+                //transform.position += move;
             }
             else
             {
@@ -90,11 +95,13 @@ public class PlayerBehaviour : MonoBehaviour {
 
     public void OnRelease()
     {
+        _scrollingManager.enabled = true;
         _state = State.Idle;
     }
 
     public void OnTrigger(int indexEnemy)
     {
+        _scrollingManager.enabled = false;
         _textBoxManager.talkTriggered(indexEnemy);
         _state = State.Talking;
     }
@@ -131,6 +138,27 @@ public class PlayerBehaviour : MonoBehaviour {
         _hideout.OnUnhide();
         GetComponent<SpriteRenderer>().enabled = true;
         _state = State.Idle;
+    }
+
+    float Distance(Transform a, Transform b)
+    {
+        return 0;
+    }
+
+    GameObject GetNearestNeighbour(IEnumerable<GameObject> list)
+    {
+        GameObject result=null;
+        float distance = float.PositiveInfinity;
+        foreach(GameObject go in list)
+        {
+            float dist = Distance(go.transform, transform);
+            if(dist<=distance)
+            {
+                distance = dist;
+                result = go;
+            }
+        }
+        return result;
     }
 
 }

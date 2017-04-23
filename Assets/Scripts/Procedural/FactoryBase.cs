@@ -27,11 +27,6 @@ public abstract class FactoryBase : MonoBehaviour
         AliveObjects = _aliveObjects.AsReadOnly();
     }
 
-    public void Start()
-    {
-        LifeZone = GetComponent<RectTransform>();
-    }
-
     public void Update()
     {
         _spawnTimer += Time.deltaTime;

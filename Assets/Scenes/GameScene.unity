@@ -431,6 +431,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 472089736}
     m_Modifications:
+    - target: {fileID: 114070650816144552, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: CharacterPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4150829172698114, guid: b269cc4f1acf6ab40892ee902e7447d2, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -484,6 +489,17 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 1.4
       objectReference: {fileID: 0}
+    - target: {fileID: 114070650816144552, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: CharacterPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1088714227842636, guid: 1d5a20315a68348ff8c9a2ba6db44a35,
+        type: 2}
+    - target: {fileID: 114070650816144552, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: GenericCount
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b269cc4f1acf6ab40892ee902e7447d2, type: 2}
   m_IsPrefabParent: 0
@@ -493,6 +509,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 599627079}
   m_Script: {fileID: 11500000, guid: 9a0d6db236564e17afdd43092f365602, type: 3}
+--- !u!114 &1191221391 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114893297910654106, guid: c3cc0ca47a762dc428e9429522b11c84,
+    type: 2}
+  m_PrefabInternal: {fileID: 93713265}
+  m_Script: {fileID: 11500000, guid: 608185a49d15d60408764ccbc4c4e0c4, type: 3}
 --- !u!114 &1418776615 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114670798712177718, guid: a72f932d2c1d5c64db1b524baca251cb,
@@ -604,7 +626,7 @@ Prefab:
         type: 2}
       propertyPath: _textBoxManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1191221391}
     - target: {fileID: 114670798712177718, guid: a72f932d2c1d5c64db1b524baca251cb,
         type: 2}
       propertyPath: _horSpeed

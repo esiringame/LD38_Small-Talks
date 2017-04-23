@@ -16,7 +16,6 @@ public class NPCBehaviour : MonoBehaviour
     public float CatchDistance = .2f;
 
     private Transform _playerTransform;
-    public int _indexNPC;
     private State _stateNPC;
     private bool isFacingRight;
 
@@ -60,7 +59,7 @@ public class NPCBehaviour : MonoBehaviour
         {
             _stateNPC = State.walking;
         }
-        else if (playerDistance < TriggerDistance && _stateNPC == State.walking && Descriptor.KnowPlayer)
+        else if (playerDistance < TriggerDistance && _stateNPC == State.walking && Descriptor.KnowPlayer && _player.GetComponent<PlayerBehaviour>().GetState() != PlayerBehaviour.State.Hidding)
         {
             _stateNPC = State.triggered;
         }
@@ -102,7 +101,8 @@ public class NPCBehaviour : MonoBehaviour
 
     void Caught()
     {
-        _player.GetComponent<PlayerBehaviour>().OnTrigger(_indexNPC);
+        _player.GetComponent<PlayerBehaviour>().OnTrigger(Descriptor.CharacterId, Descriptor.EncounterCounter);
+        Descriptor.EncounterCounter++;
     }
 
 

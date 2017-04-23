@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public struct PedestrianDescriptor
+public class PedestrianDescriptor
 {
     public int CharacterId;
     public int EncounterCounter;

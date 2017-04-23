@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 public class ProceduralEngine : MonoBehaviour
 {
-    public PlayerBehaviour PlayerBehaviour;
+    public PlayerBehaviour PlayerBehaviour; // TODO: private, use Player tag
     public float SpawnDelayMin = 0.5f;
     public float SpawnDelayMax = 3;
 

@@ -1,19 +1,13 @@
 fileFormatVersion: 2
-guid: 1176751e336ac574a96632d5b90c6e53
-timeCreated: 1492892133
+guid: d90958bcd7f606f458374cfccafcaacb
+timeCreated: 1492895205
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Sprite-NPC_0
-    21300002: Sprite-NPC_1
-    21300004: Sprite-NPC_2
-    21300006: Sprite-NPC_3
-    21300008: Sprite-NPC_4
-    21300010: Sprite-NPC_5
-    21300012: Sprite-NPC_6
-    21300014: Sprite-NPC_7
-    21300016: Sprite-NPC_8
-    21300018: Sprite-NPC_9
+    21300000: Sprite-NPC-GM_0
+    21300002: Sprite-NPC-GM_1
+    21300004: Sprite-NPC-GM_2
+    21300006: Sprite-NPC-GM_3
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -88,132 +82,54 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite-NPC_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 39
-        width: 18
-        height: 39
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0275}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Sprite-NPC_1
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 39
-        width: 18
-        height: 39
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0275}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Sprite-NPC_2
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 39
-        width: 18
-        height: 39
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0275}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Sprite-NPC_3
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 39
-        width: 18
-        height: 39
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0275}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Sprite-NPC_4
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 39
-        width: 18
-        height: 39
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0275}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Sprite-NPC_5
+      name: Sprite-NPC-GM_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 18
-        height: 39
+        width: 23
+        height: 30
       alignment: 9
-      pivot: {x: 0.5, y: 0.0275}
+      pivot: {x: 0.42, y: 0.035}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sprite-NPC_6
+      name: Sprite-NPC-GM_1
       rect:
         serializedVersion: 2
-        x: 18
+        x: 23
         y: 0
-        width: 18
-        height: 39
+        width: 23
+        height: 30
       alignment: 9
-      pivot: {x: 0.5, y: 0.0275}
+      pivot: {x: 0.42, y: 0.035}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sprite-NPC_7
+      name: Sprite-NPC-GM_2
       rect:
         serializedVersion: 2
-        x: 36
+        x: 46
         y: 0
-        width: 18
-        height: 39
+        width: 23
+        height: 30
       alignment: 9
-      pivot: {x: 0.5, y: 0.0275}
+      pivot: {x: 0.42, y: 0.035}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sprite-NPC_8
+      name: Sprite-NPC-GM_3
       rect:
         serializedVersion: 2
-        x: 54
+        x: 69
         y: 0
-        width: 18
-        height: 39
+        width: 23
+        height: 30
       alignment: 9
-      pivot: {x: 0.5, y: 0.0275}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Sprite-NPC_9
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 0
-        width: 18
-        height: 39
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0275}
+      pivot: {x: 0.42, y: 0.035}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

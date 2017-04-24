@@ -15,10 +15,9 @@ public class SceneryEngine : MonoBehaviour
 
         foreach(FactoryScenery f in _factories) 
         {
-            Rect zone  = f.LifeZone.rect;
+            float zone  = f.LifeZone.rect.xMin + f.LifeZone.transform.position.x;
             float spawn = f.SpawnZone.transform.position.x;
-            float offset = spawn - zone.xMin;// TODO: spawn zone not needed to be centered to 0,0
-            Debug.Log(offset);
+            float offset = spawn - zone;
             while (offset > 0f) 
             {
                 Spawn(f, offset);

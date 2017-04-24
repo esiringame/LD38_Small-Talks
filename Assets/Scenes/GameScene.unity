@@ -618,7 +618,7 @@ Prefab:
     - target: {fileID: 114070650816144552, guid: b269cc4f1acf6ab40892ee902e7447d2,
         type: 2}
       propertyPath: CharacterPrefabs.Array.size
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4150829172698114, guid: b269cc4f1acf6ab40892ee902e7447d2, type: 2}
       propertyPath: m_LocalPosition.x
@@ -703,6 +703,48 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114070650816144552, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: CharacterPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1411534537237262, guid: 6bc68c65642c9a54ab766cb33d882168,
+        type: 2}
+    - target: {fileID: 114070650816144552, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: CharacterPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 1385469549656296, guid: a02ebdfb2f234984da5dbac406930556,
+        type: 2}
+    - target: {fileID: 114070650816144552, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: CharacterPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 1285962406218048, guid: 7e7e7f1ed6c76d6468bb5ad8ba289347,
+        type: 2}
+    - target: {fileID: 114070650816144552, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: CharacterPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 1640057167613822, guid: 0f24a7ffc47e6aa4fac3e33fd453c453,
+        type: 2}
+    - target: {fileID: 114070650816144552, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: CharacterPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 1717770303943568, guid: f90b5e8cae729504584d8e420a9778e6,
+        type: 2}
+    - target: {fileID: 114070650816144552, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: CharacterPrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 1533609346484092, guid: 6fd72c96cf02b154e83b22b75ba81546,
+        type: 2}
+    - target: {fileID: 114070650816144552, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: CharacterPrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 1687577326503330, guid: bf67fbd8dd2d9d64da425c72a95bde91,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b269cc4f1acf6ab40892ee902e7447d2, type: 2}
   m_IsPrefabParent: 0

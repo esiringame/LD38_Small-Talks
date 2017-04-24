@@ -23,7 +23,7 @@ public class BinSound : MonoBehaviour {
         }
         if (Player.GetComponent<PlayerBehaviour>().GetState() != PlayerBehaviour.State.Hidding && playerLastState == true)
         {
-            music.Play();
+            //music.Play();
             playerLastState = false;
         }
 

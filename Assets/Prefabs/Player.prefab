@@ -22,12 +22,14 @@ GameObject:
   - component: {fileID: 212149849955364740}
   - component: {fileID: 95409912637577834}
   - component: {fileID: 114745611851995938}
-  - component: {fileID: 82882902404771438}
   - component: {fileID: 114670798712177718}
   - component: {fileID: 114463791072630244}
   - component: {fileID: 50970647122945658}
   - component: {fileID: 61243629299839416}
   - component: {fileID: 114242505601743834}
+  - component: {fileID: 82784804344364072}
+  - component: {fileID: 114801072297125554}
+  - component: {fileID: 61705627583398294}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -93,7 +95,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1619958, y: 0.35060325}
   m_EdgeRadius: 0
---- !u!82 &82882902404771438
+--- !u!61 &61705627583398294
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1744746265059892}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.005250007, y: 0.18330002}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.475, y: 0.03}
+    oldSize: {x: 0.21, y: 0.39}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.21, y: 0.39}
+  m_EdgeRadius: 0
+--- !u!82 &82784804344364072
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -102,7 +129,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 01a9f1f40a4e18c408e974a48e3d8a77, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0987f111718c09a419cf9815bd1e415f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -237,6 +264,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8dd9ac8ad192ca4418ed182770dfbe34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114801072297125554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1744746265059892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93f98207443e42842947f586451dd1d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212149849955364740

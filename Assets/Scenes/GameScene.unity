@@ -682,7 +682,7 @@ Prefab:
     - target: {fileID: 114070650816144552, guid: b269cc4f1acf6ab40892ee902e7447d2,
         type: 2}
       propertyPath: GenericCount
-      value: 0
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 114453686807072662, guid: b269cc4f1acf6ab40892ee902e7447d2,
         type: 2}
@@ -745,6 +745,16 @@ Prefab:
       value: 
       objectReference: {fileID: 1687577326503330, guid: bf67fbd8dd2d9d64da425c72a95bde91,
         type: 2}
+    - target: {fileID: 114070650816144552, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: ProbabilityWeight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114098420086866384, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: SpawnDelayMin
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b269cc4f1acf6ab40892ee902e7447d2, type: 2}
   m_IsPrefabParent: 0

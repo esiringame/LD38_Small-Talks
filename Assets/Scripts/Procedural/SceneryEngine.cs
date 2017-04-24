@@ -24,6 +24,7 @@ public class SceneryEngine : MonoBehaviour
                 Spawn(f, offset);
                 offset -= f.LastTileSize;
             }
+            f.ScrollSize = f.LastTileSize + offset;
         }
     }
 

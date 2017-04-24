@@ -45,6 +45,7 @@ public class PedestrianFactory : FactoryBase
         PedestrianDescriptor descriptor = _inventory[randomId];
         GameObject obj = Instantiate(descriptor.CharacterId != 0 ? CharacterPrefabs[descriptor.CharacterId - 1] : GenericPrefabs);
         obj.GetComponent<NPCBehaviour>().Descriptor = descriptor;
+        _inventory.Remove(descriptor);
         return obj;
     }
 

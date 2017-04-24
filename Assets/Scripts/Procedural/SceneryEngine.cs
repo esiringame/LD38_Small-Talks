@@ -10,7 +10,7 @@ public class SceneryEngine : MonoBehaviour
 
     public void Start()
     {
-        _factories = GetComponents<FactoryScenery>();
+        _factories = GetComponents<FactoryScenery>().Where(x => x.enabled).ToArray();
 	    _scrollingManager = GetComponentInParent<ScrollingManager>();
 
         //foreach(FactoryScenery f in _factories) 

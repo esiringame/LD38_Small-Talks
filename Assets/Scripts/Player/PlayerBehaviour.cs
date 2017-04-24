@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerBehaviour : MonoBehaviour
 {
@@ -19,8 +20,12 @@ public class PlayerBehaviour : MonoBehaviour
     private ScrollingManager _scrollingManager;
     private TrashcanAnimatorController _hideout;
     private ScrollableRigidbody _scrollableRigidbody;
+    public float score,highScore;
+    private Text textScore;
+    private Text textHighScore;
+
     //private Rigidbody2D _rigidbody;
-    
+
     public State GetState()
     {
         return _state;
@@ -34,11 +39,16 @@ public class PlayerBehaviour : MonoBehaviour
     // Use this for initialization
     void Start () {
         _state = State.Idle;
-
+        score = 0;
+        highScore = score;
         isFacingRight = true;
 
         _scrollingManager = GetComponentInParent<ScrollingManager>();
         _scrollableRigidbody = GetComponent<ScrollableRigidbody>();
+
+        textScore = GameObject.FindGameObjectWithTag("txtsco").GetComponent<Text>();
+        textHighScore = GameObject.FindGameObjectWithTag("txthsco").GetComponent<Text>();
+
     }
 
     void Movement()
@@ -85,11 +95,22 @@ public class PlayerBehaviour : MonoBehaviour
     {
         _scrollableRigidbody.MoveVector = Vector2.zero;
         Movement();
+        if (_state != State.Talking)
+        {
+            score = 100f + score*1.0025f;
+
+            if (highScore < score)
+                highScore = score;
+        }
+
+        textScore.text = ((int)score).ToString();
+        textHighScore.text = ((int) highScore).ToString();
     }
 
     // Update is called once per frame
     void Update () {
         Action();
+
     }
 
     public void OnRelease()
@@ -103,6 +124,8 @@ public class PlayerBehaviour : MonoBehaviour
         _scrollingManager.enabled = false;
         _textBoxManager.talkTriggered(CharacterId, EncounterCounter);
         _state = State.Talking;
+ 
+        score = 0;
     }
 
     void Action()

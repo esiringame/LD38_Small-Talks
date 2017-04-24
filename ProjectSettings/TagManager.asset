@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - dialogtextpanel
+  - txtsco
+  - txthsco
   layers:
   - Default
   - TransparentFX

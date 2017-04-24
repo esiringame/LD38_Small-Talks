@@ -98,8 +98,8 @@ MonoBehaviour:
   Direction: {x: -1, y: 0, z: 0}
   WalkingSpeed: 0.79
   MaxSpeed: 99.99
-  Acceleration: 0.1
-  TriggerDistance: 0.7
+  Acceleration: 1
+  TriggerDistance: 0.4
   CatchDistance: 0.2
 --- !u!114 &114862615825704788
 MonoBehaviour:

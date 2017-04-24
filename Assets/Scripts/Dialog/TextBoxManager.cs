@@ -24,7 +24,7 @@ public class TextBoxManager : MonoBehaviour {
         gameObject.SetActive(true);
         EncounterCounter++;
         StreamReader theReader;
-        if (EncounterCounter > 3 && CharacterId > 0)
+        if (EncounterCounter > 3 || CharacterId > 8)
         {
             theReader = new StreamReader("Assets/Naration/Random.txt", Encoding.Default);
             allTextInFile = theReader.ReadToEnd();

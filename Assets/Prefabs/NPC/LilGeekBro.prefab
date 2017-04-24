@@ -77,7 +77,7 @@ MonoBehaviour:
   WalkingSpeed: 0.79
   MaxSpeed: 99.99
   Acceleration: 0.3
-  TriggerDistance: 0.2
+  TriggerDistance: 0.5
   CatchDistance: 0.2
 --- !u!114 &114566426463084014
 MonoBehaviour:

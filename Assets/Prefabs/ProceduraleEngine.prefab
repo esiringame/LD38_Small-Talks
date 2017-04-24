@@ -90,8 +90,9 @@ MonoBehaviour:
   LifeZone: {fileID: 224172947689760698}
   SpawnZone: {fileID: 224375903441720944}
   Root: {fileID: 0}
-  Prefabs:
-  - {fileID: 1088714227842636, guid: 1d5a20315a68348ff8c9a2ba6db44a35, type: 2}
+  GenericCount: 20
+  GenericPrefabs: {fileID: 0}
+  CharacterPrefabs: []
 --- !u!114 &114098420086866384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef91358cc49694c48b0cedb8b5a1a006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBehaviour: {fileID: 0}
   SpawnDelayMin: 0.5
   SpawnDelayMax: 3
 --- !u!224 &224172947689760698

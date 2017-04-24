@@ -22,7 +22,6 @@ public class TextBoxManager : MonoBehaviour {
     public void talkTriggered(int CharacterId, int EncounterCounter)
     {
         gameObject.SetActive(true);
-        EncounterCounter++;
         StreamReader theReader;
         if (EncounterCounter > 3 || CharacterId > 8)
         {
@@ -34,7 +33,7 @@ public class TextBoxManager : MonoBehaviour {
         }
         else if (EncounterCounter <  3 && CharacterId > 0)
         {
-            string filen = CharacterId.ToString() + EncounterCounter.ToString();//+ ".txt";
+            string filen = CharacterId + "" + (EncounterCounter + 1);//+ ".txt";
             TextAsset file = Resources.Load(filen) as TextAsset;
             if (file == null)
                 Debug.Log(filen + " not found");

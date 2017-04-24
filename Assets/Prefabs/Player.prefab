@@ -225,9 +225,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _textBoxManager: {fileID: 0}
   HideoutFactory: {fileID: 0}
-  _horSpeed: 1
-  _verSpeed: 1
+  _horSpeed: 1.25
+  _verSpeed: 1.1
   HideoutDistanceMax: 0.3
+  score: 0
+  highScore: 0
 --- !u!114 &114745611851995938
 MonoBehaviour:
   m_ObjectHideFlags: 1

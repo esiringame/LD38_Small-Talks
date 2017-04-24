@@ -883,7 +883,7 @@ Prefab:
         type: 2}
       propertyPath: CharacterPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 1088714227842636, guid: 81e6d4fec6b080241b3bd5442eaa79c7,
+      objectReference: {fileID: 1088714227842636, guid: 1d5a20315a68348ff8c9a2ba6db44a35,
         type: 2}
     - target: {fileID: 114098420086866384, guid: b269cc4f1acf6ab40892ee902e7447d2,
         type: 2}
@@ -1936,7 +1936,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 33
     m_MaxSize: 100
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -2014,7 +2014,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 33
     m_MaxSize: 100
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

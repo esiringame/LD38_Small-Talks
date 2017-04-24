@@ -4,7 +4,7 @@ public abstract class ScrollableBase : MonoBehaviour
 {
     private ScrollingManager _scrollingManager;
     
-	private void Start()
+	protected  virtual void Start()
 	{
 	    _scrollingManager = GetComponentInParent<ScrollingManager>();
 	    if (_scrollingManager != null)

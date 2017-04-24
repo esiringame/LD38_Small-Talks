@@ -18,7 +18,8 @@ public class PlayerBehaviour : MonoBehaviour
     private bool isFacingRight;
     private ScrollingManager _scrollingManager;
     private TrashcanAnimatorController _hideout;
-    private Rigidbody2D _rigidbody;
+    private ScrollableRigidbody _scrollableRigidbody;
+    //private Rigidbody2D _rigidbody;
     
     public State GetState()
     {
@@ -37,7 +38,7 @@ public class PlayerBehaviour : MonoBehaviour
         isFacingRight = true;
 
         _scrollingManager = GetComponentInParent<ScrollingManager>();
-        _rigidbody = GetComponent<Rigidbody2D>();
+        _scrollableRigidbody = GetComponent<ScrollableRigidbody>();
     }
 
     void Movement()
@@ -68,21 +69,27 @@ public class PlayerBehaviour : MonoBehaviour
             if (move != Vector3.zero)
             {
                 _state = State.Walking;
-                Vector2 move2D = move.normalized;
-                move2D.Scale(new Vector3(_horSpeed, _verSpeed) * Time.deltaTime);
-                _rigidbody.MovePosition(_rigidbody.position + move2D);
             }
             else
             {
                 _state = State.Idle;
             }
+
+            Vector2 move2D = move.normalized;
+            move2D.Scale(new Vector2(_horSpeed, _verSpeed));
+            _scrollableRigidbody.MoveVector = move2D;
         }
+    }
+
+    void FixedUpdate()
+    {
+        _scrollableRigidbody.MoveVector = Vector2.zero;
+        Movement();
     }
 
     // Update is called once per frame
     void Update () {
         Action();
-        Movement();
     }
 
     public void OnRelease()

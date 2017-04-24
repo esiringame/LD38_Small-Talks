@@ -26,13 +26,20 @@ public class TextBoxManager : MonoBehaviour {
         StreamReader theReader;
         if (EncounterCounter > 3 || CharacterId > 8)
         {
-            theReader = new StreamReader("Assets/Naration/Random.txt", Encoding.UTF8);
-            allTextInFile = theReader.ReadToEnd();
+            TextAsset file = Resources.Load("Random") as TextAsset;
+            if (file == null)
+                Debug.Log("Random.txt not found");
+            else
+                allTextInFile = file.text;
         }
         else if (EncounterCounter <  3 && CharacterId > 0)
         {
-            theReader = new StreamReader("Assets/Naration/"+ CharacterId.ToString() + EncounterCounter.ToString() + ".txt", Encoding.UTF8);
-            allTextInFile = theReader.ReadToEnd();
+            string filen = CharacterId.ToString() + EncounterCounter.ToString();//+ ".txt";
+            TextAsset file = Resources.Load(filen) as TextAsset;
+            if (file == null)
+                Debug.Log(filen + " not found");
+            else
+                allTextInFile = file.text;
         }
         else 
         {

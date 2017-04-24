@@ -13,7 +13,7 @@ public class RoadFactory : FactoryScenery
     {
     }
 
-    public void Start()
+    public void Awake()
     {
         _rectifiedProbabilityWeight = new double[Prefabs.Length];
         int i, sum = 0;

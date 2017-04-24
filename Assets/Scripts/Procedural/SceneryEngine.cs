@@ -13,8 +13,18 @@ public class SceneryEngine : MonoBehaviour
         _factories = GetComponents<FactoryScenery>().Where(x => x.enabled).ToArray();
 	    _scrollingManager = GetComponentInParent<ScrollingManager>();
 
-        //foreach(FactoryScenery f in _factories) 
-        //    Spawn(f);
+        foreach(FactoryScenery f in _factories) 
+        {
+            Rect zone  = f.LifeZone.rect;
+            float spawn = f.SpawnZone.transform.position.x;
+            float offset = spawn - zone.xMin;// TODO: spawn zone not needed to be centered to 0,0
+            Debug.Log(offset);
+            while (offset > 0f) 
+            {
+                Spawn(f, offset);
+                offset -= f.LastTileSize;
+            }
+        }
     }
 
     public void Update()

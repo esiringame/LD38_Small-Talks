@@ -26,12 +26,12 @@ public class TextBoxManager : MonoBehaviour {
         StreamReader theReader;
         if (EncounterCounter > 3 || CharacterId > 8)
         {
-            theReader = new StreamReader("Assets/Naration/Random.txt", Encoding.Default);
+            theReader = new StreamReader("Assets/Naration/Random.txt", Encoding.UTF8);
             allTextInFile = theReader.ReadToEnd();
         }
         else if (EncounterCounter <  3 && CharacterId > 0)
         {
-            theReader = new StreamReader("Assets/Naration/"+ CharacterId.ToString() + EncounterCounter.ToString() + ".txt", Encoding.Default);
+            theReader = new StreamReader("Assets/Naration/"+ CharacterId.ToString() + EncounterCounter.ToString() + ".txt", Encoding.UTF8);
             allTextInFile = theReader.ReadToEnd();
         }
         else 

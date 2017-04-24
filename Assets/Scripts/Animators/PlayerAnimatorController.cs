@@ -22,7 +22,7 @@ public class PlayerAnimatorController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         _renderer.flipX = !_player.GetIsFacingRight();
-		if(_player.GetState() == PlayerBehaviour.State.Walking || _contact)
+		if(_player.GetState() == PlayerBehaviour.State.Walking || _contact && _player.GetState() == PlayerBehaviour.State.Idle)
         {
             _animator.SetBool("isWalking", true);
             if(!_audio.isPlaying)
@@ -33,11 +33,15 @@ public class PlayerAnimatorController : MonoBehaviour {
         {
             _animator.SetBool("isWalking", false);
         }
-        _contact = false;
 	}
 
-    void OnCollisionStay2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         _contact = true;
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        _contact = false;
     }
 }

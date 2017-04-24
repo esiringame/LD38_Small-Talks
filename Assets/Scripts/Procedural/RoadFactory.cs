@@ -5,8 +5,8 @@ using System.Collections.Generic;
 public class RoadFactory : FactoryScenery
 {
     public GameObject[] Prefabs;
-    public int[] ProbabilityWeight;
 
+    public int[] ProbabilityWeight;
     private double[] _rectifiedProbabilityWeight;
 
     public RoadFactory()
@@ -15,8 +15,8 @@ public class RoadFactory : FactoryScenery
 
     public void Awake()
     {
-        _rectifiedProbabilityWeight = new double[Prefabs.Length];
-        int i, sum = 0;
+        _rectifiedProbabilityWeight = new double[Prefabs.Length + 1];
+        int i, sum = VoidProbabilityWeight;
         for (i = 0; i < ProbabilityWeight.Length; i++)
         {
             _rectifiedProbabilityWeight[i] = ProbabilityWeight[i];
@@ -37,7 +37,7 @@ public class RoadFactory : FactoryScenery
         for (int i = 0; i < Prefabs.Length; i++)
             if (_rectifiedProbabilityWeight[i] > rng)
                 return Instantiate(Prefabs[i]);
-        return Instantiate(Prefabs[Prefabs.Length - 1]);
+        return null;
     }
 
     protected override void OnObjectDestroy(GameObject obj)

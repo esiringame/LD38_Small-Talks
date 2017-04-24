@@ -13,6 +13,9 @@ public abstract class FactoryScenery : MonoBehaviour
 
     public ReadOnlyCollection<GameObject> AliveObjects { get; private set; }
 
+    public float VoidSize = .5f;
+    public int VoidProbabilityWeight= 1;
+
     public float LastTileSize { get; private set;}
     public float ScrollSize { get; set;}
 
@@ -49,9 +52,14 @@ public abstract class FactoryScenery : MonoBehaviour
     public GameObject Instantiate()
     {
         GameObject spawned = LocalInstantiate();
-        _spawnedObjects.Add(spawned);
-
-        LastTileSize = spawned.GetComponent<SpriteRenderer>().bounds.size.x;
+        if (spawned == null) {
+            LastTileSize = VoidSize;
+        }
+        else
+        {
+            _spawnedObjects.Add(spawned);
+            LastTileSize = spawned.GetComponent<SpriteRenderer>().bounds.size.x;
+        }
         return spawned;
     }
 

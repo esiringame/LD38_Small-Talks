@@ -49,6 +49,8 @@ public class SceneryEngine : MonoBehaviour
     private void Spawn(FactoryScenery f, float offset = .0f)
     {
         GameObject spawned = f.Instantiate();
+        if (spawned == null)
+            return;
         spawned.transform.parent = gameObject.transform;
 
         RectTransform spawnZone = f.SpawnZone;

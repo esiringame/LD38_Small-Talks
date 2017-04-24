@@ -54,7 +54,7 @@ Animator:
   m_GameObject: {fileID: 1687577326503330}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e444cff8749629547a32e888dc3e21f8, type: 2}
+  m_Controller: {fileID: 9100000, guid: aa071823748be8e4888893c22889840c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f35e7d645bc8439cad26b7f9ba7bb197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParallaxEffect: 1
 --- !u!114 &114441721737622594
 MonoBehaviour:
   m_ObjectHideFlags: 1

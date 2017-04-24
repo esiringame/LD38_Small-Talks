@@ -875,6 +875,41 @@ Prefab:
       value: 
       objectReference: {fileID: 1088714227842636, guid: 81e6d4fec6b080241b3bd5442eaa79c7,
         type: 2}
+    - target: {fileID: 114098420086866384, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: ProbabilityWeight
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114070650816144552, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: ProbabilityWeight
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114070650816144552, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: SpawnDelayMin
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114098420086866384, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: SpawnDelayMin
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114453686807072662, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: SpawnDelayMin
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114453686807072662, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: SpawnDelayMax
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114070650816144552, guid: b269cc4f1acf6ab40892ee902e7447d2,
+        type: 2}
+      propertyPath: GenericCount
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b269cc4f1acf6ab40892ee902e7447d2, type: 2}
   m_IsPrefabParent: 0

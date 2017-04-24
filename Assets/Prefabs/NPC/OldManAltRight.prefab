@@ -96,10 +96,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: {x: -1, y: 0, z: 0}
-  WalkingSpeed: 0.79
-  MaxSpeed: 99.99
-  Acceleration: 0.1
-  TriggerDistance: 0.7
+  WalkingSpeed: 0.6
+  MaxSpeed: 100
+  Acceleration: 0
+  TriggerDistance: 2
   CatchDistance: 0.2
 --- !u!114 &114944922269044334
 MonoBehaviour:

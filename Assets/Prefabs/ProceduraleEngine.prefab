@@ -85,13 +85,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fdafeaa321c4d389011e8178f65cfa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProbabilityWeight: 1
+  ProbabilityWeight: 2
   SpawnDelayMin: 0.5
   LifeZone: {fileID: 224172947689760698}
   SpawnZone: {fileID: 224375903441720944}
   Root: {fileID: 0}
-  Prefabs:
+  GenericCount: 16
+  GenericPrefabs: {fileID: 1088714227842636, guid: 1d5a20315a68348ff8c9a2ba6db44a35,
+    type: 2}
+  CharacterPrefabs:
   - {fileID: 1088714227842636, guid: 1d5a20315a68348ff8c9a2ba6db44a35, type: 2}
+  - {fileID: 1411534537237262, guid: 6bc68c65642c9a54ab766cb33d882168, type: 2}
+  - {fileID: 1385469549656296, guid: a02ebdfb2f234984da5dbac406930556, type: 2}
+  - {fileID: 1285962406218048, guid: 7e7e7f1ed6c76d6468bb5ad8ba289347, type: 2}
+  - {fileID: 1640057167613822, guid: 0f24a7ffc47e6aa4fac3e33fd453c453, type: 2}
+  - {fileID: 1717770303943568, guid: f90b5e8cae729504584d8e420a9778e6, type: 2}
+  - {fileID: 1533609346484092, guid: 6fd72c96cf02b154e83b22b75ba81546, type: 2}
+  - {fileID: 1687577326503330, guid: bf67fbd8dd2d9d64da425c72a95bde91, type: 2}
 --- !u!114 &114098420086866384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef91358cc49694c48b0cedb8b5a1a006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBehaviour: {fileID: 0}
   SpawnDelayMin: 0.5
   SpawnDelayMax: 3
 --- !u!224 &224172947689760698
@@ -155,6 +166,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: -0.25}
-  m_SizeDelta: {x: 0, y: 1.5}
+  m_AnchoredPosition: {x: 2, y: -0.3}
+  m_SizeDelta: {x: 0, y: 1.4}
   m_Pivot: {x: 0.5, y: 0.5}

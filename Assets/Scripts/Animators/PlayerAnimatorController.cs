@@ -9,8 +9,7 @@ public class PlayerAnimatorController : MonoBehaviour {
     AudioSource _audio;
     SpriteRenderer _renderer;
 
-
-
+    private bool _contact;
 
 	// Use this for initialization
 	void Start () {
@@ -23,16 +22,22 @@ public class PlayerAnimatorController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         _renderer.flipX = !_player.GetIsFacingRight();
-		if(_player.GetState() == PlayerBehaviour.State.Walking)
+		if(_player.GetState() == PlayerBehaviour.State.Walking || _contact)
         {
             _animator.SetBool("isWalking", true);
             if(!_audio.isPlaying)
             {
-                _audio.Play();
+                //_audio.Play();
             }
         } else
         {
             _animator.SetBool("isWalking", false);
         }
+        _contact = false;
 	}
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        _contact = true;
+    }
 }

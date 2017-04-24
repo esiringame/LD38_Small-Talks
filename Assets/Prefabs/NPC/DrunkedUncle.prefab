@@ -88,7 +88,7 @@ MonoBehaviour:
   WalkingSpeed: 0.79
   MaxSpeed: 99.99
   Acceleration: 0.1
-  TriggerDistance: 3
+  TriggerDistance: 0.5
   CatchDistance: 0.2
 --- !u!114 &114391199517734186
 MonoBehaviour:
@@ -101,7 +101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f35e7d645bc8439cad26b7f9ba7bb197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParallaxEffect: 1
 --- !u!114 &114441721737622594
 MonoBehaviour:
   m_ObjectHideFlags: 1

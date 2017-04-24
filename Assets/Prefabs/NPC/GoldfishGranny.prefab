@@ -85,10 +85,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: {x: -1, y: 0, z: 0}
-  WalkingSpeed: 0.79
+  WalkingSpeed: 0.2
   MaxSpeed: 99.99
-  Acceleration: 0.1
-  TriggerDistance: 3
+  Acceleration: 5
+  TriggerDistance: 1
   CatchDistance: 0.2
 --- !u!114 &114534445508778754
 MonoBehaviour:
@@ -101,7 +101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f35e7d645bc8439cad26b7f9ba7bb197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParallaxEffect: 1
 --- !u!114 &114709517114889956
 MonoBehaviour:
   m_ObjectHideFlags: 1

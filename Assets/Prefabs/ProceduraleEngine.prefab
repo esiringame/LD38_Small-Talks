@@ -91,7 +91,7 @@ MonoBehaviour:
   SpawnZone: {fileID: 224375903441720944}
   Root: {fileID: 0}
   GenericCount: 16
-  GenericPrefabs: {fileID: 1088714227842636, guid: 1d5a20315a68348ff8c9a2ba6db44a35,
+  GenericPrefabs: {fileID: 1088714227842636, guid: 81e6d4fec6b080241b3bd5442eaa79c7,
     type: 2}
   CharacterPrefabs:
   - {fileID: 1088714227842636, guid: 1d5a20315a68348ff8c9a2ba6db44a35, type: 2}
